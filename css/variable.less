@@ -1,0 +1,161 @@
+// Core variables
+
+// Gap (span) Control
+// -------------------------
+@containerMarginBottom:  35px;
+
+@articleContainerWidth: @leftGapWidth + @rightGapWidth; // 960px
+@articleHeadWidth: 500px - 2px - 40px;  // - border - @paddingLarge
+
+@leftGapWidth: 220px;
+@rightGapWidth: 740px; 
+@bpAdjust:  -8px - 14px;  // prevent Line break cause by border 
+              // - border - @paddingSmall
+@scrollbarAdjust: -19px;
+
+
+// PushPost
+// -------------------------
+@pushPostWidth: 425px + 40px;
+@pushPostImgWidth: 100px;
+@pushPostGapWidth: 25px;
+@pushPostGapWidthAdjust:  @leftGapWidth - @pushPostImgWidth + @pushPostGapWidth;
+
+
+// VARIABLE
+// COLOR
+// -------------------------
+
+// Message colors
+@messageColor:  rgb(240, 224, 214);
+@mainMessageColor: inherit;
+@fontColor: rgb(142, 0, 0);
+@titleColor: #cc1105;
+@nameColor: @green;
+@idColor: lighten(@grayLight, 15%);
+@dateColor:  @gray;
+@noColor: @blue;
+
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+
+
+// Accent colors
+// -------------------------
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+
+//Point Level Color
+// -------------------------
+@levelOne: #E5533C;
+@levelTwo: #FFC600;
+@levelThree: #93D06D;
+@levelFour: #50AC6A;
+@levelFive: #227864;
+@levelNone: gray;
+
+
+// Scaffolding
+// -------------------------
+@bodyBackgroundColor:        rgb(255, 255, 238);
+@textColor:             @grayDark;
+@anchorColor:           @blue;
+
+
+// Links
+// -------------------------
+@linkColor:             #08c;
+@linkColorHover:        darken(@linkColor, 15%);
+
+
+// Typography
+// -------------------------
+@sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@serifFontFamily:       Georgia, "Times New Roman", Times, serif;
+@monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+
+@baseFontSize:          14px;
+@baseFontFamily:        @sansFontFamily;
+@baseLineHeight:        20px;
+@altFontFamily:         @serifFontFamily;
+
+@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsColor:         inherit; // empty to use BS default, @textColor
+
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          11px 20px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0 6px;   // 12px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+
+// Buttons
+// -------------------------
+@btnBackground:                     @white;
+@btnBackgroundHighlight:            darken(@white, 10%);
+@btnBorder:                         #ccc;
+
+@btnPrimaryBackground:              @linkColor;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+
+@btnInfoBackground:                 #5bc0de;
+@btnInfoBackgroundHighlight:        #2f96b4;
+
+@btnSuccessBackground:              #62c462;
+@btnSuccessBackgroundHighlight:     #51a351;
+
+@btnWarningBackground:              lighten(@orange, 15%);
+@btnWarningBackgroundHighlight:     @orange;
+
+@btnDangerBackground:               #ee5f5b;
+@btnDangerBackgroundHighlight:      #bd362f;
+
+@btnInverseBackground:              #444;
+@btnInverseBackgroundHighlight:     @grayDarker;
+
+
+// FONT
+// -------------------------
+// DEFAULT-font-size: 16px = 1em;
+// 15px = 0.9375em; 
+// 14px = 0.875em; 
+// 13px = 0.8125em;
+// 12px = 0.75em;
+// 1px = 0.0625em
+
+@fontSizeDefault:  16px;
+
+@fontSizeLarge: @fontSizeDefault * 1.125;
+@fontSizeSmall: @fontSizeDefault * 0.875; 
+@fontSizeMini: @fontSizeDefault * 0.75;
+
+
+
+

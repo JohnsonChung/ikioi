@@ -1,0 +1,55 @@
+/* 
+    Document   : combine.less
+    Created on : 2013/06/27
+    Author     : Kamimusuhi
+    Description:
+        Purpose of the stylesheet follows.
+*/
+// IMPORT
+@import "lesshat.less";
+
+// bootstrap
+@import "variable.less";
+
+@import "main.less";
+
+// MAIN
+body {    
+	position: relative;
+	margin: 0 auto;	
+	padding: 0;
+	color: @fontColor;
+	background-color: @grayLighter;
+	overflow-y: scroll;
+	font-size: 15px;
+}
+footer{
+	display: block;
+	clear: both;
+	text-align: center;
+}
+a {
+	color: @anchorColor;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+ul, ol {
+  padding: 0;
+  margin: 0 0 0 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: @baseLineHeight;
+  list-style: none;
+}
+
+
+// bootstrap Adjust
