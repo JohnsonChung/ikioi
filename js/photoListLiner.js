@@ -111,5 +111,5 @@ jQuery( function ($) {
     };
 
     $(window).load( function(){ methods.init();});
-    $(window).load( function() { $("div.introCon").fadeOut(2000);});
+    // $(window).load( function() { $("div.introCon").fadeOut(2000);});
 });
