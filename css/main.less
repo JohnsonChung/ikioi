@@ -6,10 +6,8 @@
   display: block;
 }
 .postCon {
-  margin: 5px 9px;
+  margin: 5px 10px;
   margin-bottom: 40px;
-  border: 1px solid black;
-  border-color: transparent;
   position: relative;
   float: left;
   // don't forget .postCon-noImage
@@ -158,6 +156,25 @@
     .footer {
       .opacity(1);
     }
+  }
+}
+.postCon-horizaontal {
+  .imgCon, .contentCon {
+    float: left;
+  }
+  .contentCon {
+    position: relative;
+    height: 100%;
+    width: auto;
+    min-width: 170px;
+    max-width: 250px;
+  }
+  .content {
+      margin-top: 30px;      
+      margin-bottom: 20px;
+    }
+  .footer {
+    .opacity(1);
   }
 }
 

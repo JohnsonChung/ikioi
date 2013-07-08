@@ -30,27 +30,32 @@
             })
         </script>
  -->
-        <style>        
+        <style>      
+            body {
+                position: relative;
+            }  
             .introCon {
-              display: block;
-              position: fixed;
-              z-index: 777;
-              height: 100%;
-              width: 100%;
-              background-color: rgba(0,0,0,0.9);  
-              text-align: center;
-              color: rgba(255,255,255,0.2);
+                display: block;
+                position: fixed;
+                z-index: 777;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(255,255,255,0.91);  
+                text-align: center;
             }
-            .introCon h1 {
-              margin-top: 20%;    
+            #intro-cat {
+                position: fixed;
+                top: 50%;
+                width: 130px;
+                text-align: center;
+                margin-top: -59px;
+                margin-left: -50px;
             }
         </style>
     </head>
     <body>
         <div class="introCon">
-            <h1>Mykomica.org</h1>
-            <h5>++++++---------------------------------------------------------------------------------------++++++</h5>
-            <h3>Article Stream</h3>
+            <img id="intro-cat" src="img/walking-cat.gif" alt="">
         </div>
 
         <div class="navbar navbar-inverse">
@@ -123,7 +128,6 @@
             {{/each}}
         </div>
         </script>
-        
         <div class="box">
             <h1>星期五 - 今日熱門</h1>
             <!-- result container -->
