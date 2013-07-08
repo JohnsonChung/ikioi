@@ -51,10 +51,12 @@
   position: absolute;  
   bottom: 45px;
   font-size: 15px;
-
-  .title {
-    float: left;
+  
+  .title, .name, .replyCount {   
+    float: left; 
     padding: @padding;
+  }
+  .title {
     padding-left: 16px;
     padding-right: 16px;
     
@@ -62,8 +64,10 @@
     font-weight: bold;
   }
   .name {
-    padding: @padding;
-    float: left;
+    background-color: gray;
+    color: white;
+  }
+  .replyCount {    
     background-color: gray;
     color: white;
   }
