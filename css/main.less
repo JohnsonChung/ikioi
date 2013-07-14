@@ -6,46 +6,47 @@
   display: block;
 }
 .postCon {
-  margin: 5px 0;
+  margin: 5px 0px;
   margin-bottom: 40px;
   position: relative;
   float: left;
   height: 100%;
   // don't forget .postCon-noImage
-}
-.postPointCon {  
-  position: absolute;  
-  top: -10px;
-  right: 10px;
-  z-index: 2;
-  font-size: 12px;
-  color: white;
-
-  .postPoint, .boardName{
-    float: left;
-    padding: 0px 4px;    
-    background-color: gray;   
-    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-
-    -webkit-transition: width .5s ease-in;
-    -moz-transition: width .5s ease-in;
-  }
-  .postPoint {
     
-  }
-  .boardName {
-    
-  }
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 3;
-    left: -5px; top: 0px;
-    width: 0;
-    border-width: 0px 0px 10px 5px;
-    border-style: solid;
-    border-color: black transparent;              
+  .postPointCon {  
+    position: absolute;  
+    top: -10px;
+    right: 10px;
+    z-index: 2;
+    font-size: 12px;
+    color: white;
+
+    .postPoint, .boardName{
+      float: left;
+      padding: 0px 4px;    
+      background-color: gray;   
+      box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+
+      -webkit-transition: width .5s ease-in;
+      -moz-transition: width .5s ease-in;
+    }
+    .postPoint {
+      
+    }
+    .boardName {
+      
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: -5px; top: 0px;
+      width: 0;
+      border-width: 0px 0px 10px 5px;
+      border-style: solid;
+      border-color: black transparent;              
+    }
   }
 }
 .infoCon {

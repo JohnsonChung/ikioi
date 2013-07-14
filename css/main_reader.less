@@ -95,7 +95,7 @@
   height: 55px;
   text-align: center;
   background-color: @fontColor;
-  .box-shadow(~"0 20px 30px -5px rgba(255,255,255,0.5) inset");
+  .box-shadow(~"0 20px 30px -5px #c13535 inset");
   .transition(~"box-shadow 0.8s ease-in");
   .transition(~"0.2s ease-in");
   .transition-property( top, box-shadow);
@@ -125,7 +125,7 @@
 
   &:hover {
     top: -5px;
-    .box-shadow(~"0 35px 30px -10px rgba(255,255,255,0.85) inset");
+    .box-shadow(~"0 35px 30px -10px #c13535 inset");
   }
   &:active {
     background-color: lighten(@fontColor, 10%);
@@ -154,38 +154,40 @@
     }
   }
 }
-.postPointCon {    
-  position: absolute;
-  right: 20px;  top: -10px;  
-  padding: 0 5px; 
-  background-color: @white;         
-  border: 1px solid @levelThree;
-  border-width: 0px 10px 0px 0px;
-  .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
-
-  &:before {
-    content: "";
-    display: block;
+.article-head {
+  .postPointCon {    
     position: absolute;
-    z-index: 3;
-    left: -6px; top: -1px;
-    width: 0;
-    border-width: 0px 0px 10px 5px;
-    border-style: solid;
-    border-color: @grayLight transparent;    
-  }
+    right: 20px;  top: -10px;  
+    padding: 0 5px; 
+    background-color: @white;         
+    border: 1px solid @levelThree;
+    border-width: 0px 10px 0px 0px;
+    .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
 
-  .boardName {
-    display: inline-block;
-    line-height: 28px;       
-    padding: 0 5px 0 0px; 
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: -6px; top: -1px;
+      width: 0;
+      border-width: 0px 0px 10px 5px;
+      border-style: solid;
+      border-color: @grayLight transparent;    
+    }
+
+    .boardName {
+      display: inline-block;
+      line-height: 28px;       
+      padding: 0 5px 0 0px; 
+    }
+    .postPoint {
+      display: inline-block;
+      padding: 0 5px 0 0;
+      line-height: 28px;
+    }
   }
-  .postPoint {
-    display: inline-block;
-    padding: 0 5px 0 0;
-    line-height: 28px;
-  }
-}
+} 
 .dynamic-container-top-fixed {
   position: fixed !important;
   top: 0; right: 0px;
