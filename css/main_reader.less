@@ -7,21 +7,6 @@
   max-width: 880px;
   background-color: @bodyBackgroundColor;
   .box-shadow(~"0 0 10px rgba(0, 0, 0, 0.1)");
-}
-.messageCon{ 
-
-}
-.message {
-  display: table;  
-  margin-bottom: 4px;
-  background-color: @messageColor;
-}
-.message-main {
-  background-color: @bodyBackgroundColor;  
-}
-
-// HEAD
-.message-head {
 
   .infoCon {
     display: block;
@@ -43,6 +28,23 @@
       color: @blue;
     }
   }
+}
+.messageCon{ 
+
+}
+.message {
+  display: table;  
+  margin-bottom: 4px;
+  background-color: @messageColor;
+}
+.message-main {
+  background-color: @bodyBackgroundColor;  
+}
+
+// HEAD
+.message-head {
+
+  
 }
 .controlCon{
 
@@ -158,22 +160,10 @@
 .article-head {
   .postPointCon {    
     position: absolute;
-    right: 20px;  top: -10px;  
+    right: 20px;  top: 0px;  
     padding: 0 5px; 
-    background-color: @white; 
+    background-color: @messageColor; 
     .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
-
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 3;
-      left: -6px; top: -1px;
-      width: 0;
-      border-width: 0px 0px 10px 5px;
-      border-style: solid;
-      border-color: @grayLight transparent;    
-    }
     
     .boardName, .postPoint, .pointArrow {
       display: inline-block;
@@ -240,12 +230,12 @@
   } 
   #fixed-forward-btn {
     position: fixed;
-    bottom: 25%; left: 35px;
+    bottom: 25%; left: 10px;
     border-radius: 10px 0 0 10px;
   }
   #fixed-next-btn {
     position: fixed;
-    bottom: 25%; right: 35px;
+    bottom: 25%; right: 10px;
     border-radius: 0 10px 10px 0;
   }
 }

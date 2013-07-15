@@ -25,8 +25,7 @@
 !function ($){
 
     
-    function moveFixControl(){
-        positionTop = ($(window).scrollTop() + $(window).height() ) - ( $(window).height() / 2 );
+    function moveFixControl(){        
         $('#fixed-forward-btn').css({
            "left": ( ($(window).width() / 2) - ( 960 / 2) - 35 )
         });
