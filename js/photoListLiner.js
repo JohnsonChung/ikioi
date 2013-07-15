@@ -27,7 +27,7 @@ jQuery( function ($) {
             this.windowResize();
         },
         cacheElements: function () {
-            this.$imgCon = $('.listCon');
+            this.$imgCon = $('.imgCon');
             console.log('cacheEvent Complete!');
         },
         bindEvents: function () {
@@ -111,5 +111,5 @@ jQuery( function ($) {
     };
 
     $(window).load( function(){ methods.init();});
-    // $(window).load( function() { $("div.introCon").fadeOut(2000);});
+    $(window).load( function() { $("div.introCon").fadeOut(2000);});
 });

@@ -23,30 +23,31 @@
 // HEAD
 .message-head {
 
+  .infoCon {
+    display: block;
+
+    .title, .name, .posttime, .postnumber {
+      display: inline-block;
+    }
+    .title {
+      font-weight: bold;
+      color: @titleColor;
+    }
+    .name {
+      font-weight: bold;
+      color: @nameColor;
+    }
+    .posttime {    
+    }
+    .postnumber {
+      color: @blue;
+    }
+  }
 }
 .controlCon{
 
 }
-.infoCon {
-  display: block;
 
-  .title, .name, .posttime, .postnumber {
-    display: inline-block;
-  }
-  .title {
-    font-weight: bold;
-    color: @titleColor;
-  }
-  .name {
-    font-weight: bold;
-    color: @nameColor;
-  }
-  .posttime {    
-  }
-  .postnumber {
-    color: @blue;
-  }
-}
 // BODY
 .message-body {
   .attach {
@@ -89,7 +90,7 @@
   position: relative;
   top: -15px;
   z-index: 99;
-  margin-left: 5px;
+  margin-left: 15px;
   padding-top: 15px;
   width: 36px;
   height: 55px;
@@ -159,9 +160,7 @@
     position: absolute;
     right: 20px;  top: -10px;  
     padding: 0 5px; 
-    background-color: @white;         
-    border: 1px solid @levelThree;
-    border-width: 0px 10px 0px 0px;
+    background-color: @white; 
     .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
 
     &:before {
@@ -175,16 +174,17 @@
       border-style: solid;
       border-color: @grayLight transparent;    
     }
-
-    .boardName {
+    
+    .boardName, .postPoint, .pointArrow {
       display: inline-block;
-      line-height: 28px;       
-      padding: 0 5px 0 0px; 
+      line-height: 28px;  
     }
-    .postPoint {
-      display: inline-block;
-      padding: 0 5px 0 0;
-      line-height: 28px;
+    .boardName {                 
+    }
+    .postPoint {      
+    }
+    .pointArrow {
+      margin-right: -5px;
     }
   }
 } 
@@ -223,26 +223,30 @@
 #fixed-control {
   
   #fixed-forward-btn, #fixed-next-btn {
-    height: 50px; line-height: 50px;
+    height: 70px; line-height: 70px;
     width: 30px;
     background-color: fadeout(@messageColor, 30%);
-    border: 1px solid transparent;
+    border: 1px solid transparent;    
     text-align: center;
     color: @fontColor;
     text-decoration: none;
+    .transition(~"top 1s linear");
+    .transition-property( top, bottom, left, right);
 
     &:hover {
-      background-color: fadeout(@messageColor, 0%);
-      border-color: @blue;
+      background-color: fadeout(@messageColor, 0%);      
+      font-weight: bold;
     }
   } 
   #fixed-forward-btn {
     position: fixed;
-    top: 60%; left: 20px;
+    bottom: 25%; left: 35px;
+    border-radius: 10px 0 0 10px;
   }
   #fixed-next-btn {
     position: fixed;
-    top: 60%; right:20px;
+    bottom: 25%; right: 35px;
+    border-radius: 0 10px 10px 0;
   }
 }
 #dynamic-container-bottom {
@@ -279,4 +283,21 @@
     border-style: solid;
     border-color: darken(@messageColor, 10%) transparent;              
   }
+}
+
+// Swatches
+.swatches1 {
+  background-color: @levelOne !important;
+}
+.swatches2 {
+  background-color: @levelTwo !important;
+}
+.swatches3 {
+  background-color: @levelThree !important;
+}
+.swatches4 {
+  background-color: @levelFour !important;
+}
+.swatches5 {
+  background-color: @levelFive !important;
 }

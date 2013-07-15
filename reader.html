@@ -21,7 +21,6 @@
         <script src="js/vendor/bootstrap.min.js"></script>        
 
         <script id="handler"src="js/handler-reader.js"></script>
-        <script src="js/photoListLiner.js"></script>    
         <script src="js/plugins.js"></script>
     </head>    
     <body>
@@ -46,8 +45,9 @@
                     <div class="postPointCon">
                         <div class="boardName">
                             <a href="#">星海爭霸</a>
-                        </div><!-- space killer                    
-                        --><div class="postPoint swatches{{SWATCHES}}">12356789</div>
+                        </div>
+                        <div class="postPoint">12356789</div>
+                        <div class="pointArrow swatches{{SWATCHES}}"><img src="img/scrrowLevel1.gif" alt=""></div>
                     </div>
                     <div class="infoCon">
                         <div class="title">{{{TITLE}}}</div>
@@ -104,13 +104,13 @@
                         {{/each}}
                     </div>
                 </div>
-                <div class="article-footer"></div>
+                <div class="article-footer"></div>                    
+                <div id="fixed-control">
+                    <a href="#" id="fixed-forward-btn"><</a>
+                    <a href="#"id="fixed-next-btn">></a>
+                </div>
             </div></script>            
             <div class="box"></div>
-            <div id="fixed-control">
-                <a href="#" id="fixed-forward-btn"><</a>
-                <a href="#"id="fixed-next-btn">></a>
-            </div>
             <div id="dynamic-container-bottom">                
                 ==dynamic-container-bottom==
                 <div id="reply-form">

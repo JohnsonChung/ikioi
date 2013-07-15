@@ -18,14 +18,14 @@
     top: -10px;
     right: 10px;
     z-index: 2;
+    background-color: gray;   
     font-size: 12px;
     color: white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 
     .postPoint, .boardName{
       float: left;
       padding: 0px 4px;    
-      background-color: gray;   
-      box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 
       -webkit-transition: width .5s ease-in;
       -moz-transition: width .5s ease-in;
@@ -35,6 +35,16 @@
     }
     .boardName {
       
+    }
+    .pointArrow {
+      float: left;
+      font-size: 0;
+      margin-left: -3px;
+
+      img { 
+        float: left;
+        font-size: 0;
+      }
     }
     &:before {
       content: "";
@@ -48,34 +58,35 @@
       border-color: black transparent;              
     }
   }
-}
-.infoCon {
-  position: absolute;  
-  bottom: 45px;
-  font-size: 15px;
-  
-  .title, .name, .replyCount {   
-    float: left; 
-    padding: @padding;
-  }
-  .title {
-    padding-left: 16px;
-    padding-right: 16px;
+
+  .infoCon {
+    position: absolute;  
+    bottom: 45px;
+    font-size: 15px;
     
-    background-color: darken( @bodyBackgroundColor, 5% );
-    font-weight: bold;
+    .title, .name, .replyCount {   
+      float: left; 
+      padding: @padding;
+    }
+    .title {
+      padding-left: 16px;
+      padding-right: 16px;
+      
+      background-color: darken( @bodyBackgroundColor, 5% );
+      font-weight: bold;
+    }
+    .name {
+      background-color: gray;
+      color: white;
+    }
+    .replyCount {    
+      background-color: gray;
+      color: white;
+    }
   }
-  .name {
-    background-color: gray;
-    color: white;
+  .controlCon {
+    
   }
-  .replyCount {    
-    background-color: gray;
-    color: white;
-  }
-}
-.controlCon {
-  
 }
 .imgCon {  
   -webkit-transition: all .5s ease-in-out;

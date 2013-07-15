@@ -70,7 +70,7 @@
                     </a>
 
                     <!-- Be sure to leave the brand out there if you want it shown -->    
-                    <a class="brand" href="#">Project name</a>
+                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc" style="margin: -25px 0 -10px -5px;"></a>
 
                     <!-- Everything you want hidden at 940px or less, place within here -->    
                     <div class="nav-collapse collapse">
@@ -103,7 +103,7 @@
             </div>
             {{/each}}
         </div> <-->   
-
+        
         <script id="entry-template" type="text/x-handlebars-template">
             <div class="listCon">
             {{#each comments}}
@@ -111,6 +111,7 @@
                 <div class="postPointCon">
                     <div class="boardName">{{BOARDNAME}}</div>
                     <div class="postPoint swatches{{SWATCHES}}">{{POINT}}</div>
+                    <div class="pointArrow swatches{{SWATCHES}}"><img src="img/scrrowLevel2.gif"></div>
                 </div>
                 <div class="infoCon">
                     <div class="title">{{TITLE}}</div>

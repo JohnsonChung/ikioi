@@ -24,6 +24,25 @@
 // Place any jQuery/helper plugins in here.
 !function ($){
 
+    
+    function moveFixControl(){
+        positionTop = ($(window).scrollTop() + $(window).height() ) - ( $(window).height() / 2 );
+        $('#fixed-forward-btn').css({
+           "left": ( ($(window).width() / 2) - ( 960 / 2) - 35 )
+        });
+        $('#fixed-next-btn').css({
+           "right": ( ($(window).width() / 2) - ( 960 / 2) - 35 )
+        });
+           console.log($(".article").width() + " "+  $(window).width());
+    };
+    $(window).load( function(){
+        moveFixControl();
+    });
+    $(window).on( 'resize', function(){
+        moveFixControl();
+    });
+
+
     function toggleContainer(target, css) {
         $(target).css(css);
     };    
