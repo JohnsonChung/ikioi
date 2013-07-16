@@ -7,8 +7,10 @@
   max-width: 880px;
   background-color: @bodyBackgroundColor;
 
-  .infoCon {
+  .infoCon {    
     display: block;
+    margin: 3px 5px;
+    font-family: Serif,"新細明體",arial,Georgia;
 
     .title, .name, .posttime, .postnumber {
       display: inline-block;
@@ -175,26 +177,34 @@
   }
 }
 .article-head {
+
   .postPointCon {    
     position: absolute;
-    right: 20px;  top: 0px;
-    height: 28px; line-height: 28px;
-    background-color: @grayLight;  
+    right: 15px;  top: 0px;
+    background-color: @grayLight;      
+    font-family: Georgia,"新細明體",arial,Serif;
+    font-size: 14px;
     .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
     
-    .boardName, .postPoint, .pointArrow {
+    .boardName, .postPoint, .pointArrow {      
+      height: 24px;
+      line-height: 24px;
       float: left;
+      color: @white;
     }
     .boardName {       
-      padding: 0 5px;  
+      padding: 0 5px;        
+      
       a{
         color: @white !important;
       }      
     }
     .postPoint {      
       padding: 0 5px;
+      
     }
     .pointArrow {
+      line-height: 20px;
     }
   }
 } 
@@ -204,7 +214,7 @@
   height: auto !important;
   line-height: auto !important;
 
-  .postPointCon {  
+  .postPointCon {
   display: block;
   list-style: none;
   
@@ -216,20 +226,7 @@
     }
   }
 }
-.forward-btn {    
-  display: block;
-  position: absolute;  
-  right: 0;
-  height: 45px;
-  width: 45px;
-  line-height: 45px;
-  vertical-align: middle;
-  text-align: center;
 
-  &:hover {
-    background-color: darken(@messageColor, 10%);
-  }
-}
 #fixed-control {
   
   #fixed-forward-btn, #fixed-next-btn {
