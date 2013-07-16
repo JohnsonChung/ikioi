@@ -6,7 +6,6 @@
   margin-top: 5px;
   max-width: 880px;
   background-color: @bodyBackgroundColor;
-  .box-shadow(~"0 0 10px rgba(0, 0, 0, 0.1)");
 
   .infoCon {
     display: block;
@@ -53,9 +52,27 @@
 // BODY
 .message-body {
   .attach {
-  float: left;
-  clear: left;
-  margin: 0 20px 20px 20px;
+    position: relative;
+    float: left;
+    clear: left;
+    margin: 0 20px 20px 20px;    
+
+    .attach-control {    
+      .opacity(0);
+      .transition(~"0.1s ease-in");
+      .transition-property(display, opacity);
+
+      .image-search-btn{
+        position: absolute;
+        right: 3px; bottom: 3px;
+        z-index: 3;
+      }
+    }
+    &:hover {
+      .attach-control {
+        .opacity(1); 
+      }
+    }
   }
   .content {
     min-width: 350px;
@@ -160,21 +177,24 @@
 .article-head {
   .postPointCon {    
     position: absolute;
-    right: 20px;  top: 0px;  
-    padding: 0 5px; 
-    background-color: @messageColor; 
+    right: 20px;  top: 0px;
+    height: 28px; line-height: 28px;
+    background-color: @grayLight;  
     .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
     
     .boardName, .postPoint, .pointArrow {
-      display: inline-block;
-      line-height: 28px;  
+      float: left;
     }
-    .boardName {                 
+    .boardName {       
+      padding: 0 5px;  
+      a{
+        color: @white !important;
+      }      
     }
     .postPoint {      
+      padding: 0 5px;
     }
     .pointArrow {
-      margin-right: -5px;
     }
   }
 } 
@@ -215,13 +235,13 @@
   #fixed-forward-btn, #fixed-next-btn {
     height: 70px; line-height: 70px;
     width: 30px;
-    background-color: fadeout(@messageColor, 30%);
+    background-color: fadeout(@messageColor, 50%);
     border: 1px solid transparent;    
     text-align: center;
     color: @fontColor;
     text-decoration: none;
-    .transition(~"top 1s linear");
-    .transition-property( top, bottom, left, right);
+    .transition(~"top 0.5s linear");
+    .transition-property(background-color, top, bottom, left, right);
 
     &:hover {
       background-color: fadeout(@messageColor, 0%);      

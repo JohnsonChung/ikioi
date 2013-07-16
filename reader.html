@@ -39,6 +39,7 @@
                 <a id="readerLogo"><img src="img/komicalogo.png"alt=""></a> 
                 <a class="forward-btn" href="星海爭霸"><i class="icon-share"></i></a>
             </div>
+            
             <script id="template" type="text/x-handlebars-template">
             <div class="article">
                 <div class="article-head">
@@ -46,7 +47,7 @@
                         <div class="boardName">
                             <a href="#">星海爭霸</a>
                         </div>
-                        <div class="postPoint">12356789</div>
+                        <div class="postPoint swatches{{SWATCHES}}">12356789</div>
                         <div class="pointArrow swatches{{SWATCHES}}"><img src="img/arrowLevel1.gif" alt=""></div>
                     </div>
                     <div class="infoCon">
@@ -62,20 +63,23 @@
                 <div class="article-body">
                     <div class="messageCon">
                         <div class="message message-main">
-                            <div class="main-head">
+                            <div class="message-head main-head">
                                 <div class="infoCon">
                                 </div>
                                 <div class="controlCon"></div>
                             </div>
-                            <div class="main-body">                                
+                            <div class="message-body main-body">
                                 <div class="attach attach-main">
                                     <a href="#"><img alt="" src="http://placehold.it/250x250/0eafff/ffffff.png" /></a>
+                                    <div class="attach-control">
+                                        <a class="image-search-btn" title="google 圖片搜尋"><img src="img/icon-google.png" height="18" width="18" alt=""></a>
+                                    </div>
                                 </div>
                                 <p class="content content-main">
                                     {{{CONTENT}}}
                                 </p>
                             </div>
-                            <div class="main-footer">
+                            <div class="message-footer main-footer">
                                 <div class="rating">BAD vs GOOD</div>
                             </div>
                         </div>
@@ -92,6 +96,9 @@
                             <div class="message-body">
                                 <div class="attach">
                                     <a href="#"><img alt="" src="http://placehold.it/{{imgSize}}/0eafff/ffffff.png" /></a>
+                                    <div class="attach-control">
+                                        <a class="image-search-btn" title="google 圖片搜尋"><img src="img/icon-google.png" height="18" width="18" alt=""></a>
+                                    </div>
                                 </div>
                                 <p class="content">
                                     {{{CONTENT}}}
