@@ -3,7 +3,6 @@
   position: relative;
   padding: 30px 40px 200px 40px;
   margin: 0 auto;
-  margin-top: 5px;
   max-width: 880px;
   background-color: @bodyBackgroundColor;
 
@@ -52,7 +51,7 @@
 }
 
 // BODY
-.message-body {
+.message-body, .main-body {
   .attach {
     position: relative;
     float: left;
@@ -78,12 +77,8 @@
   }
   .content {
     min-width: 350px;
-    padding: 0 20px 20px 20px;
+    padding: 15px 20px 15px 20px;
   }
-}
-
-.message-main {
-  display: block;
 }
 .content-main {
   width: 100%;
@@ -96,10 +91,36 @@
 #dynamic-container-top {
   position: relative;
   margin: 0 auto;
+  z-index: 3;
   height: 45px;
-  width: 960px;
+  width: 980px;
   line-height: 45px;
   vertical-align: middle;
+  background-color: @messageColor;
+  .box-shadow(~"0 10px 20px -10px rgba(0,0,0,0.3)");
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 3;
+    left: 0px; bottom: -10px;
+    width: 0;
+    border-width: 10px 0px 0px 10px;
+    border-style: solid;
+    border-color: darken(@messageColor, 10%) transparent;              
+   }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 3;
+    right: 0px; bottom: -10px;
+    width: 0;
+    border-width: 10px 10px 0px 00px;
+    border-style: solid;
+    border-color: darken(@messageColor, 10%) transparent;              
+  }
 }
 #readerLogo {
   position: absolute;  
@@ -120,7 +141,7 @@
   .box-shadow(~"0 20px 30px -5px #c13535 inset");
   .transition(~"box-shadow 0.8s ease-in");
   .transition(~"0.2s ease-in");
-  .transition-property( top, box-shadow);
+  .transition-property( top, box-shadow);  
 
   &:before {
     content: "";
@@ -182,50 +203,33 @@
     position: absolute;
     right: 15px;  top: 0px;
     background-color: @grayLight;      
-    font-family: Georgia,"新細明體",arial,Serif;
+    font-family: Georgia,"新細明體",arial,Serif;    
     font-size: 14px;
+    color: @white;
     .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
     
-    .boardName, .postPoint, .pointArrow {      
+    .boardName, .postPoint, .pointArrow, .linkPost { 
+      padding: 0 5px;          
       height: 24px;
       line-height: 24px;
       float: left;
-      color: @white;
     }
     .boardName {       
-      padding: 0 5px;        
-      
-      a{
-        color: @white !important;
-      }      
+    }    
+    .linkPost {
+      background-color: @blue; 
     }
-    .postPoint {      
-      padding: 0 5px;
-      
+    .postPoint { 
+      padding-right: 0;
     }
     .pointArrow {
       line-height: 20px;
     }
+    a{
+      color: @white !important;
+    }      
   }
 } 
-.dynamic-container-top-fixed {
-  position: fixed !important;
-  top: 0; right: 0px;
-  height: auto !important;
-  line-height: auto !important;
-
-  .postPointCon {
-  display: block;
-  list-style: none;
-  
-    .boardName {
-      display: list-item;
-    }
-    .postPoint {
-      display: list-item;
-    }
-  }
-}
 
 #fixed-control {
   
