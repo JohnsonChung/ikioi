@@ -27,10 +27,10 @@
     
     function moveFixControl(){        
         $('#fixed-forward-btn').css({
-           "left": ( ($(window).width() / 2) - ( 960 / 2) - 35 )
+           "left": ( ($(window).width() / 2) - ( 960 / 2) - 55 )
         });
         $('#fixed-next-btn').css({
-           "right": ( ($(window).width() / 2) - ( 960 / 2) - 35 )
+           "right": ( ($(window).width() / 2) - ( 960 / 2) - 55 )
         });
            console.log($(".article").width() + " "+  $(window).width());
     };
@@ -41,6 +41,13 @@
         moveFixControl();
     });
 
+    function favoriteBtn() {
+        setTimeout( function(){$(".favorite-btn img").fadeOut(0).fadeIn(2000).attr("src", "img/coffeetimeon.png")} ,2000);
+        setTimeout( function(){$(".favorite-btn img").attr("src", "img/spinner_horizontal.gif")} ,0);
+    }
+    $(document).ready( function() {
+        $(".favorite-btn").on("click", favoriteBtn);
+    });    
 
     function toggleContainer(target, css) {
         $(target).css(css);
