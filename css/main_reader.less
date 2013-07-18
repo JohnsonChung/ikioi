@@ -3,6 +3,7 @@
   position: relative;
   padding: 30px 40px 200px 40px;
   margin: 0 auto;
+  margin-top: 45px;
   max-width: 880px;
   background-color: @bodyBackgroundColor;
 
@@ -88,8 +89,14 @@
 
 
 // dynamic Container 
+#dynamicCon-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
 #dynamic-container-top {
-  position: relative;
+  position: relative;  
   margin: 0 auto;
   z-index: 3;
   height: 45px;
@@ -124,6 +131,36 @@
   .favorite-btn {
     position: absolute; 
     right: 10px; top: 3px;
+  }
+  .postPointCon {    
+    position: absolute;
+    right: 15px;  bottom: -25px;
+    background-color: @grayLight;      
+    font-family: Georgia,"新細明體",arial,Serif;    
+    font-size: 14px;
+    color: @white;
+    .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
+    
+    .boardName, .postPoint, .pointArrow, .linkPost { 
+      padding: 0 5px;          
+      height: 24px;
+      line-height: 24px;
+      float: left;
+    }
+    .boardName {       
+    }    
+    .linkPost {
+      background-color: @blue; 
+    }
+    .postPoint { 
+      padding-right: 0;
+    }
+    .pointArrow {
+      line-height: 20px;
+    }
+    a{
+      color: @white !important;
+    }      
   }
 }
 #readerLogo {
@@ -201,44 +238,13 @@
     }
   }
 }
-.article-head {
-
-  .postPointCon {    
-    position: absolute;
-    right: 15px;  top: 0px;
-    background-color: @grayLight;      
-    font-family: Georgia,"新細明體",arial,Serif;    
-    font-size: 14px;
-    color: @white;
-    .box-shadow(~"0 4px 10px rgba(0, 0, 0, 0.1)");
-    
-    .boardName, .postPoint, .pointArrow, .linkPost { 
-      padding: 0 5px;          
-      height: 24px;
-      line-height: 24px;
-      float: left;
-    }
-    .boardName {       
-    }    
-    .linkPost {
-      background-color: @blue; 
-    }
-    .postPoint { 
-      padding-right: 0;
-    }
-    .pointArrow {
-      line-height: 20px;
-    }
-    a{
-      color: @white !important;
-    }      
-  }
+.article-head {  
 } 
 
 #fixed-control {
   
   #fixed-forward-btn, #fixed-next-btn {
-    height: 120px; line-height: 120px;
+    height: 100px; line-height: 100px;
     width: 50px;
     background-color: fadeout(@messageColor, 50%);
     border: 1px solid transparent;    
@@ -263,14 +269,24 @@
     bottom: 25%; right: 10px;
     border-radius: 0 10px 10px 0;
   }
+  #fixed-top-btn {
+    position: fixed;
+    right: 10px; bottom: 10px;
+    height: 50px; line-height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: @messageColor;
+  }
+}
+#dynamicCon-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0; 
 }
 #dynamic-container-bottom {
-  @dynamicConWidth: 980px;
-  position: fixed;
-  bottom: 0; left: 50%;
-  margin: 0 -10px;
-  margin-left: -@dynamicConWidth / 2;
-  width: @dynamicConWidth;
+  position: relative;  
+  margin: 0 auto;  
+  width: 980px;
   height: 0px;
   max-height: 400px;
   background-color: @messageColor;

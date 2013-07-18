@@ -34,20 +34,22 @@
             .message>(.message-head>(.infoCon)+(.controlCon))+(.message-body>(.attach)+(p.content))+(.message-footer>.rating)
          -->
 
-            <div id="dynamic-container-top">          
-                <a id="readerHome-btn" href="#"><i class="icon-home icon-white"></i></a>
-                <a id="readerLogo"><img src="img/komicalogo.png"alt=""></a> 
-                <a class="favorite-btn"><img src="img/coffeetime.png" alt=""></a>
-            </div>  
-            <script id="template" type="text/x-handlebars-template">
-            <div class="article">
-                <div class="article-head">
+            <div id="dynamicCon-top">
+                <div id="dynamic-container-top">          
+                    <a id="readerHome-btn" href="#"><i class="icon-home icon-white"></i></a>
+                    <a id="readerLogo"><img src="img/komicalogo.png"alt=""></a> 
+                    <a class="favorite-btn"><img src="img/coffeetime.png" alt=""></a>
                     <div class="postPointCon">
                         <div class="boardName"><a href="#">星海爭霸</a></div>                        
                         <div class="linkPost"><a href="本文">連結本文<i class="icon-share icon-white"></i> or 原文消失<i class="icon-ban-circle icon-white"></i></a></div>
-                        <div class="postPoint swatches{{SWATCHES}}">12356789</div>
-                        <div class="pointArrow swatches{{SWATCHES}}"><img src="img/arrowLevel3.png" alt=""></div>
+                        <div class="postPoint swatches1">12356789</div>
+                        <div class="pointArrow swatches1"><img src="img/arrowLevel3.png" alt=""></div>
                     </div>
+                </div>  
+            </div>
+            <script id="template" type="text/x-handlebars-template">
+            <div class="article">
+                <div class="article-head">
                     <div class="infoCon">
                         <div class="title">{{{TITLE}}}</div>
                         <div class="name">{{NAME}}</div>
@@ -111,26 +113,31 @@
                 </div>
                 <div class="article-footer"></div>                    
                 <div id="fixed-control">
+                    <a href="#" id="fixed-top-btn"><i class="icon-arrow-up"></i></a>
                     <a href="#" id="fixed-forward-btn"><</a>
                     <a href="#"id="fixed-next-btn">></a>
                 </div>
             </div></script>            
+
             <div class="box"></div>
-            <div id="dynamic-container-bottom">                
-                ==dynamic-container-bottom==
-                <div id="reply-form">
-                    <div class="article-form">
-                        <div class="form-head"></div>
-                        <div class="form-body"></div>
-                        <div class="form-footer"></div>
+
+            <div id="dynamicCon-bottom">
+                <div id="dynamic-container-bottom">                
+                    ==dynamic-container-bottom==
+                    <div id="reply-form">
+                        <div class="article-form">
+                            <div class="form-head"></div>
+                            <div class="form-body"></div>
+                            <div class="form-footer"></div>
+                        </div>
+                        <div class="attachment-form">
+                            <div class="form-head"></div>
+                            <div class="form-body"></div>
+                            <div class="form-footer"></div>
+                        </div>
                     </div>
-                    <div class="attachment-form">
-                        <div class="form-head"></div>
-                        <div class="form-body"></div>
-                        <div class="form-footer"></div>
-                    </div>
+                    ==dynamic-container-bottom==
                 </div>
-                ==dynamic-container-bottom==
             </div>
     </body>
 </html>

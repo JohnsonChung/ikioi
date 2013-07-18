@@ -34,12 +34,25 @@
         });
            console.log($(".article").width() + " "+  $(window).width());
     };
+    function moveTop(){      
+        if( ($(document).scrollTop()+$(window).height())   >= 1024) {
+            $("#fixed-top-btn").stop().animate({"right": "10px"}, 500);
+        } else {
+            $("#fixed-top-btn").stop().animate({"right":"-50px"}, 300);  
+        }
+        console.log($(document).scrollTop());
+    }  
     $(window).load( function(){
         moveFixControl();
+        $("#fixed-top-btn").css({"right":"-50px"});  
     });
     $(window).on( 'resize', function(){
         moveFixControl();
     });
+    $(window).on( 'scroll', function(){        
+        moveTop();
+    })
+
 
     function favoriteBtn() {
         setTimeout( function(){$(".favorite-btn img").fadeOut(0).fadeIn(2000).attr("src", "img/coffeetimeon.png")} ,2000);
