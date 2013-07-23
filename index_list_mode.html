@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">        
+        <link rel="stylesheet" href="css/combine.less" type="text/less">
+
+        <script src="js/vendor/jquery-1.9.1.js"></script>
+        <script src="js/libs/less.js-1.3.3/less.min.js"></script>
+        <script src="js/vendor/handlebars-1.0.0-rc.4.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>        
+
+        <script id="handler"src="js/handler.js"></script>
+        <script src="js/photoListLiner.js"></script>
+        <script src="js/jquery.autoellipsis-1.0.10.min.js"></script>
+        <!-- http://pvdspek.github.io/jquery.autoellipsis/ -->
+<!-- 
+        <script>
+            $(window).load( function() {
+                $('div.contentCon').ellipsis('.content'); 
+            })
+        </script>
+ -->
+        <style>      
+            body {
+                position: relative;
+            }  
+            .introCon {
+                display: block;
+                position: fixed;
+                z-index: 777;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(255,255,255,0.91);  
+                text-align: center;
+            }
+            #intro-cat {
+                position: fixed;
+                top: 50%;
+                width: 130px;
+                text-align: center;
+                margin-top: -59px;
+                margin-left: -50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="introCon">
+            <img id="intro-cat" src="img/walking-cat.gif" alt="">
+        </div>
+        <!-- 關於 -->
+        <div class="modal fade ng-scope in">
+            <div class="modal-header">
+                <h3>關於Komica.cc</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>嗨~! 這裡是 komica.cc 一個為了方便大家觀察<a href="http://komica.org/" target="_blank">K島</a>所架設的統計站，系統會自動替每篇文章評分，來看一下範例吧！</li>
+                    <li><img style="display:block; margin:0 auto;" src="img/scoreHelp.jpg" height="330" width="377" alt=""></li>
+                    <li>分數以<b>文章時間</b>及<b>回覆數量</b>計算，回應越多、越快的討論串分數就越高呦！</li><br>
+                    <li>
+                        komica.cc 的資料皆來自
+                        <a href="http://komica.org/" target="_blank">Komica.org</a>
+                        及其子站。
+                    </li>
+                    <li>本站文章及圖片著作權皆為其原作者所有，不為其內容負責。</li><br>
+                    <li>
+                        強烈推薦使用
+                        <a href="http://www.google.com/intl/zh-TW/chrome/browser/" target="_blank">最新 Google Chrome</a>
+                        觀看本網站以取得最佳瀏覽效果。
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn cancel" ng-click="about_open=false">關閉</button>
+            </div>
+        </div>
+        <!-- end 關於 -->
+
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->    
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <!-- Be sure to leave the brand out there if you want it shown -->    
+                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc" style="margin: -25px 0 -10px -5px;"></a>
+
+                    <!-- Everything you want hidden at 940px or less, place within here -->    
+                    <div class="nav-collapse collapse">
+                        <!-- .nav, .navbar-search, .navbar-form, etc --> 
+                        <ul class="nav">
+                          <li class="active"><a href="#">Home</a></li>
+                          <li><a href="#">Link</a></li>
+                          <li><a href="#">Link</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- div.listCon>({{{#each comments}}}+div.postCon)>(div.postPoint{{{POINT}}})+(div.infoCon>(div.title{{{TITLE}}}+div.name{{{NAME}}}))+(div.controlCon)+(div.imgCon>img[src="img/album/{{imgNo}}.jpg"])+(div.contentCon>(div.content{{{CONTENT}}}+div.replyCount)) -->
+        <!-- <div class="listCon">
+            {{#each comments}}
+            <div class="postCon">
+                <div class="postPoint">{{POINT}}</div>
+                <div class="infoCon">
+                    <div class="title">{{TITLE}}</div>
+                    <div class="name">{{NAME}}</div>
+                </div>
+                <div class="controlCon"></div>
+                <div class="imgCon"><img src="img/album/{{imgNo}}.jpg"></div>
+                <div class="contentCon">
+                    <div class="content">{{CONTENT}}</div>
+                    <div class="replyCount"></div>
+                </div>
+            </div>
+            {{/each}}
+        </div> <-->   
+        <!-- system message -->
+        <div id="alertCon">
+            <div class="alert">伺服器正在維護中，於今天晚上重新回復營運。</div>
+        </div>
+
+        <script id="entry-template" type="text/x-handlebars-template">
+            <div class="listCon">
+            {{#each comments}}
+            <div class="postCon">
+                <div class="postPointCon">
+                    <div class="boardName">{{BOARDNAME}}</div>
+                    <div class="postPoint swatches{{SWATCHES}}">{{POINT}}</div>
+                    <div class="pointArrow swatches{{SWATCHES}}"><img src="img/arrowLevelDown.png" title="上升"></div>
+                </div>
+                <div class="infoCon">
+                    <div class="title">{{TITLE}}</div>
+                    <div class="name">{{NAME}}</div>
+                </div>
+                <div class="controlCon"></div>
+                <div class="imgCon"><img class="postImg" src="img/album/{{imgNo}}.jpg"></div>
+                <div class="contentCon">
+                    <div class="content">{{{CONTENT}}}</div>
+                    <div class="footer">                        
+                        <div class="replyCount">{{REPLYCOUNT}}</div>
+                    </div>  
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        </script>
+        <!-- <div class="postCon postCon-horizontal">
+            <div class="postPointCon">
+                <div class="boardName">新聞速報</div>
+                <div class="postPoint swatches1">78,645,456</div>
+            </div>
+            <div class="infoCon">
+                <div class="title">123123</div>
+                <div class="name">123</div>
+            </div>
+            <div class="controlCon"></div>
+            <div class="imgCon"><img class="postImg" src="img/album/03.jpg" style="width: 166.0472664541942px; height: 328.5594725581069px;"></div>
+            <div class="contentCon">
+                <div class="content">外來種賤女狗公惱羞開始血尿跳針哭哭ㄛwwwwww&lt;br&gt;護航乙</div>
+                <div class="footer">                        
+                    <div class="replyCount">432</div>
+                </div>  
+            </div>
+        </div> -->
+        <div class="box">
+            <h1>星期五 - 今日熱門</h1>
+            <!-- result container -->
+        </div>
+        <footer>
+            <p>All right reserved by Mykomica.org</p>
+        </footer>
+    </body>
+</html>

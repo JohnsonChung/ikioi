@@ -36,9 +36,9 @@
     };
     function moveTop(){      
         if( ($(document).scrollTop()+$(window).height())   >= 1024) {
-            $("#fixed-top-btn").stop().animate({"right": "10px"}, 500);
+            $("#fixed-top-btn").stop().animate({"right": "15px"}, 500);
         } else {
-            $("#fixed-top-btn").stop().animate({"right":"-50px"}, 300);  
+            $("#fixed-top-btn").stop().animate({"right":"-60px"}, 300);  
         }
         console.log($(document).scrollTop());
     }  
@@ -55,8 +55,17 @@
 
 
     function favoriteBtn() {
-        setTimeout( function(){$(".favorite-btn img").fadeOut(0).fadeIn(2000).attr("src", "img/coffeetimeon.png")} ,2000);
-        setTimeout( function(){$(".favorite-btn img").attr("src", "img/spinner_horizontal.gif")} ,0);
+        $(".favorite-btn img")
+            .attr("src", "img/coffeetimeon.png");
+        $(".favorite-btn")
+            .css({right:-40, opacity:0});
+        $(".favorite-btn").animate({"right":"10px",opacity: 1},300);
+        $(".favorite-btn").on("mouseover", function(){
+            $(".favorite-btn img").attr("src", "img/coffeetimeOnCancle.png");
+        })
+        $(".favorite-btn").on("mouseout", function(){
+            $(".favorite-btn img").attr("src", "img/coffeetimeon.png");
+        })
     }
     $(document).ready( function() {
         $(".favorite-btn").on("click", favoriteBtn);

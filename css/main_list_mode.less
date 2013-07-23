@@ -1,0 +1,231 @@
+//
+// div.listCon>div.postCon*5>(div.infoCon)+(div.controlCon)+(div.imgCon)+(div.contentCon)
+@padding: 3px 5px;
+
+.listCon {
+  display: block;
+}
+.postCon {
+  margin: 0px 0px;
+  margin-bottom: 45px;
+  position: relative;
+  float: left;
+  height: 100%;
+  // don't forget .postCon-noImage
+
+  .postPointCon {  
+    position: absolute;  
+    top: -10px; right: 10px;
+    z-index: 2;
+    background-color: gray;  
+    font-family: Georgia,"新細明體",arial,Serif; 
+    font-size: 12px;
+    color: white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+
+    .postPoint, .boardName{
+      float: left;
+      height: 20px;
+      line-height: 22px;
+      padding: 0px 4px;    
+
+      -webkit-transition: width .5s ease-in;
+      -moz-transition: width .5s ease-in;
+    }
+    .postPoint {
+      
+    }
+    .boardName {
+      
+    }
+    .pointArrow {
+      float: left;
+      font-size: 0;
+      margin-left: -3px;
+
+      img { 
+        float: left;
+        font-size: 0;
+      }
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: -5px; top: 0px;
+      width: 0;
+      border-width: 0px 0px 10px 5px;
+      border-style: solid;
+      border-color: black transparent;              
+    }
+  }
+
+  .infoCon {
+    position: absolute;  
+    bottom: 45px;
+    font-size: 15px;
+    
+    .title, .name, .replyCount {   
+      float: left; 
+      padding: @padding;
+    }
+    .title {
+      padding-left: 16px;
+      padding-right: 16px;
+      
+      background-color: darken( @bodyBackgroundColor, 5% );
+      font-weight: bold;
+    }
+    .name {
+      background-color: gray;
+      color: white;
+    }
+    .replyCount {    
+      background-color: gray;
+      color: white;
+    }
+  }
+  .controlCon {
+    
+  }
+}
+.imgCon {  
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in;
+  height: 100%;
+
+  img{    
+    position: relative;
+    z-index: -1;
+    height: 100%;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in;
+  } 
+  &:hover {
+    box-shadow: 0px 0px 40px white inset;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+.contentCon {
+  position: absolute;
+  left: 0; bottom: -1px; //Adjust image Height overFlow
+  width: 100%;  
+  height: 45px;  
+  overflow: hidden;
+  background-color: @bodyBackgroundColor;
+  border-top: 1px solid black;
+  .transition(~".2s ease-in-out 1s");
+  .transition-property( margin, height, background-color, box-shadow);
+  
+  .content {
+    display: block;
+    font-size: 13px;
+    margin: 3px 10px;
+    height: 100%;
+    line-height: 20px !important;
+    color: @fontColor;
+    overflow: hidden;   
+    .transition(~".5s ease-in-out 1s");
+    .transition-property(margin, height);
+  }
+  .footer {
+    position: absolute;
+    right: 5px; bottom: 5px;
+    .opacity(0);
+    .transition(~"opacity.5s ease-in-out");
+
+    .replyCount {      
+      float: left;
+      padding-right: 3px;
+      font-size: 12px;
+    }
+  }
+  &:hover {
+    height: 100%;        
+    background-color: darken(@bodyBackgroundColor, 2%);
+    box-shadow: 0px -20px 30px -10px @messageColor inset;
+    .transition(~".2s ease-in-out");
+    .transition-property( margin, height, background-color, box-shadow);
+
+    .content {
+      height: -moz-calc(100% - 25px);
+      height: -webkit-calc(100% - 25px);
+      height: -o-calc(100% - 25px);
+      height: calc(100% - 25px);
+      margin-top: 30px;      
+      .transition(~".5s ease-in-out");
+      .transition-property(margin, height);
+    }
+    .footer {
+      .opacity(1);
+    }
+
+  }
+}
+
+// After jQuery Special Adjustment
+.postCon-noImage {
+  
+  .contentCon {
+    height: 100%;
+
+    .content {
+      margin-top: 30px;      
+      margin-bottom: 20px;
+    }
+    .footer {
+      .opacity(1);
+    }
+  }
+}
+.postCon-horizontal {
+  .imgCon, .contentCon {
+    float: left;
+  }
+  .contentCon {
+    position: relative;
+    height: 100%;
+    width: auto;
+    min-width: 170px;
+    max-width: 250px;
+  }
+  .content {
+      margin-top: 30px;      
+      margin-bottom: 20px;
+    }
+  .footer {
+    .opacity(1);
+  }
+}
+
+
+// Alert
+#alertCon {
+  position: fixed; 
+  top: 5%; z-index: 999;
+  width: 100%;
+
+  .alert {
+    display: table;
+    margin: 0 auto;  
+  }  
+}
+
+
+// Swatches
+.swatches1 {
+  background-color: @levelOne !important;
+}
+.swatches2 {
+  background-color: @levelTwo !important;
+}
+.swatches3 {
+  background-color: @levelThree !important;
+}
+.swatches4 {
+  background-color: @levelFour !important;
+}
+.swatches5 {
+  background-color: @levelFive !important;
+}

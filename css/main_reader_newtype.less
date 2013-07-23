@@ -1,3 +1,8 @@
+// temp IMPORT
+@import "lesshat.less";
+@import "variable.less";
+// temp IMPORT
+
 // VIEWER
 // --------------------------
 .article {
@@ -31,34 +36,70 @@
     }
   }
 }
-.messageCon{ 
 
-}
+// Message
+// --------------------------
+.messageCon{}
 .message {
   display: table;  
   margin-bottom: 4px;
   background-color: @messageColor;
+
+  .message-head {
+  }
+  .message-body {
+    
+  }
 }
 .message-main {
-  width: 100%;
-  background-color: @bodyBackgroundColor;  
+  position: relative;
+  z-index: 3;
+  background-color: @bodyBackgroundColor;    
+
+  .main-head {    
+    position: relative;
+  }
+  .main-body {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    margin-left: -10px;
+    width: 720px;
+    background-color: @messageColor;
+
+    .attach-main {
+    }
+    .content-main {      
+    }
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: 0px; top: -10px;
+      width: 0;
+      border-width: 0px 0px 10px 10px;
+      border-style: solid;
+      border-color: darken(@messageColor, 10%) transparent;              
+    }
+  }
+  .main-footer {
+
+  }
+  .infoCon {
+  }
+  .attach {    
+    display: inline-block;
+    margin: 0 !important;
+    float: none !important;
+    z-index: 2;
+  }
 }
 
 
-// HEAD
+// Attach & Content
 // --------------------------
-.message-head {
-
-  
-}
-.controlCon{
-
-}
-
-
-// BODY
-// --------------------------
-.message-body, .main-body {
+.article {
   .attach {
     position: relative;
     float: left;
@@ -87,14 +128,6 @@
     padding: 15px 20px 15px 20px;
   }
 }
-.content-main {
-  width: 100%;
-}
-
-
-// FOOTER
-// --------------------------
-
 
 // dynamic Container 
 // --------------------------
@@ -107,7 +140,6 @@
 #dynamic-container-top {
   position: relative;  
   margin: 0 auto;
-  z-index: 3;
   height: 45px;
   width: 980px;
   line-height: 45px;
@@ -119,7 +151,6 @@
     content: "";
     display: block;
     position: absolute;
-    z-index: 3;
     left: 0px; bottom: -10px;
     width: 0;
     border-width: 10px 0px 0px 10px;
@@ -130,7 +161,6 @@
     content: "";
     display: block;
     position: absolute;
-    z-index: 3;
     right: 0px; bottom: -10px;
     width: 0;
     border-width: 10px 10px 0px 00px;
@@ -141,35 +171,6 @@
     position: absolute; 
     right: 10px; top: 3px;
     cursor: pointer;
-  }
-  .topInfoCon {
-    height: 100%;
-    width: 100%;
-
-    .newReplyCount {
-      position: relative;
-      width: auto; height: 100%;
-      display: table;
-      overflow: hidden;
-      margin: 0 auto;
-      padding: 0 18px;      
-      border: 5px solid darken(@messageColor, 2%);
-      border-width: 0 5px;
-      border-radius: 0px;
-      background-color: darken(@messageColor, 4%);
-      color: @fontColor;
-      font-size: 13px;
-
-      &:hover {
-        border-color: darken(@messageColor, 3%);
-        background-color: darken(@messageColor, 6%);
-        text-decoration: none;
-        cursor: pointer;        
-      }
-      &:active{
-        background-color: darken(@messageColor, 8%);
-      }
-    }    
   }
   .postPointCon {    
     position: absolute;
@@ -192,7 +193,7 @@
       background-color: @blue; 
     }
     .postPoint { 
-      padding-right: 5px;
+      padding-right: 0;
     }
     .pointArrow {
       line-height: 20px;
@@ -205,10 +206,11 @@
 #readerLogo {
   position: absolute;  
   z-index: 99;
-  left: 60px;
+  margin-left: 10px;
 }
 #readerHome-btn {
-  position: absolute;  
+  display: inline-block;
+  position: relative;
   top: -15px;
   z-index: 99;
   margin-left: 15px;
