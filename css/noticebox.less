@@ -2,8 +2,11 @@
 
 // NoticeBox
 // --------------------------
-#noticeBox-btn {
-  background-color: @red;
+li.active {
+  #noticeBox-btn {
+    background-color: @red;
+
+}
 }
 #noticeboxCon {
   position: fixed;
@@ -81,7 +84,7 @@
 
 #noticeboxCon {
   &::-webkit-scrollbar {
-   width: 5px;
+    width: 5px;
   }
   &::-webkit-scrollbar {
     width: 5px;
@@ -90,5 +93,6 @@
     background-color: @grayLighter;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: @grayLight;}
+    background-color: @grayLight;
+  }
 }
