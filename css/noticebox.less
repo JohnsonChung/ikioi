@@ -76,12 +76,16 @@
   }
 }
 
-#noticeboxCon::-webkit-scrollbar {
+#noticeboxCon {
+  &::-webkit-scrollbar {
+   width: 5px;
+  }
+  &::-webkit-scrollbar {
     width: 5px;
-}
-#noticeboxCon::-webkit-scrollbar-track {
-  background-color: @grayLighter;
-}
-#noticeboxCon::-webkit-scrollbar-thumb {
-  background-color: @grayLight;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: @grayLighter;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: @grayLight;}
 }
