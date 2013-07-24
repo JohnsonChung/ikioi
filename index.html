@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">        
         <link rel="stylesheet" href="css/combine.less" type="text/less">
+        <link rel="stylesheet" href="css/noticebox.less" type="text/less">
 
         <script src="js/vendor/jquery-1.9.1.js"></script>
         <script src="js/libs/less.js-1.3.3/less.min.js"></script>
@@ -53,12 +54,12 @@
             }
         </style>
     </head>
-    <body>
+    <body><!-- 
         <div class="introCon">
             <img id="intro-cat" src="img/walking-cat.gif" alt="">
-        </div>
+        </div> -->
         <!-- 關於 -->
-        <div class="modal fade ng-scope in">
+        <div class="modal fade ng-scope in" style="display: none;">
             <div class="modal-header">
                 <h3>關於Komica.cc</h3>
             </div>
@@ -180,8 +181,98 @@
             </div>
         </div> -->
         <div class="box">
-            <h1>星期五 - 今日熱門</h1>
             <!-- result container -->
+        </div>
+        <div id="noticeboxCon">
+            <div id="noticebox">
+                <div id="noticeCon">
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+23</div>
+                            <div class="lable">篇新回應 ( 綜合 - 共52篇 ) </div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">剛剛</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">不會游泳，現在要進去海陸新訓了........ <br>感覺這一年當兵生活會很慘</div>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+521</div>
+                            <div class="lable">篇新回應 ( 星海爭霸 - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">一小時前</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李嫌跟王女真的有交往過<br>因為某某原因而否認了就跟以前認識某女明明就有暗示我告白<br>結果我沒告白就到處抹黒我說我有嚴重妄想症一樣</div>
+                        </div>
+                    </div>
+                    
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+7</div>
+                            <div class="lable">篇新回應 ( FEZ - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">昨天</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">無內文</div>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+7</div>
+                            <div class="lable">篇新回應 ( FEZ - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">昨天</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">無內文</div>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+7</div>
+                            <div class="lable">篇新回應 ( FEZ - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">昨天</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">無內文</div>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+7</div>
+                            <div class="lable">篇新回應 ( FEZ - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">昨天</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">無內文</div>
+                        </div>
+                    </div>
+
+                    <div class="notice">
+                        <div class="noticeInfo">
+                            <div class="newreplyCount">+7</div>
+                            <div class="lable">篇新回應 ( FEZ - 共52篇)</div>
+                            <div class="noticeTime" title="2013/07/15 - 12:35">昨天</div>
+                        </div>
+                        <div class="noticeContent">
+                            <div class="imgCon"><img alt="" src="http://placehold.it/100x100/0eafff/ffffff.png" /></div>
+                            <div class="content">無內文</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
         <footer>
             <p>All right reserved by Mykomica.org</p>

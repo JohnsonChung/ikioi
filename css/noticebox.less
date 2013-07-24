@@ -1,0 +1,87 @@
+@import "variable.less";
+
+// NoticeBox
+// --------------------------
+#noticeboxCon {
+  position: fixed;
+  right: 0px; top: 42px; bottom: 0;
+  z-index: 9999;  
+  overflow-y: scroll;  
+  overflow-x: hidden;    
+
+  #noticebox { 
+    position: relative;
+    display: table;
+    height: 100%; width: 350px;
+    background-color: @bodyBackgroundColor;
+    border: 1px solid @grayLight;
+
+
+    #noticeCon {
+      margin: 10px;
+
+      .notice {
+        display: table;
+        padding: 10px 0px;
+        width: 100%;
+        border-bottom: 1px solid @grayLight;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: @messageColor;
+        }
+        &:active {
+          background-color: lighten(@messageColor, -5%);
+        }
+        &:last-child {
+          border-width: 0px;
+        }
+        .noticeInfo {
+          display: inline-block;
+          width: 100%;
+          font-size: 12px;
+
+          .lable{
+            float: left;
+          }
+          .newreplyCount {
+            float: left;
+            padding-right: 5px;
+            font-family: arial,Georgia,Serif,"新細明體";
+            font-size: 22px;
+          }
+          .noticeTime {
+            float: right;
+            margin-right: 5px;
+          }
+        }
+        .noticeContent {
+          display: block;     
+          overflow: hidden;         
+
+          .imgCon {
+            float: left; 
+            clear: left;
+            margin: 0 10px 10px 5px;
+          }
+          .content {
+            display: block;       
+            margin: 0 5px;
+            max-height: 175px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#noticeboxCon::-webkit-scrollbar {
+    width: 5px;
+}
+#noticeboxCon::-webkit-scrollbar-track {
+  background-color: @grayLighter;
+}
+#noticeboxCon::-webkit-scrollbar-thumb {
+  background-color: @grayLight;
+}
