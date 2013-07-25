@@ -4,10 +4,14 @@
 // NoticeBox
 // --------------------------
 li{
+  #noticeBox-btn  {
+    position: relative;
+    z-index: 9999;
+  }
   &.active {
     #noticeBox-btn {
       .box-shadow (~"0 0 10px rgba(0,0,0,1) inset");
-      
+
       &:before {
         content: "";
         display: block;
@@ -33,26 +37,38 @@ li{
   position: fixed;
   right: 0px; top: 42px; bottom: 0;
   z-index: 9999;  
-  overflow-y: scroll;  
-  overflow-x: hidden;  
   .box-shadow(~"-15px 0px 20px -10px rgba(0,0,0,0.2)");
 
   #noticebox { 
     position: relative;
     display: table;
     height: 100%; width: 350px;
+      padding-bottom: 50px;
     background-color: @bodyBackgroundColor;
     border-left: 1px solid @grayLight;
 
     #box-head {
-      margin: 7px auto;
+      margin: 0 auto;
+      padding: 5px 0;
       text-align: center;
       font-size: 13px;
+      .box-shadow(~"0 10px 30px -5px rgba(0,0,0,0.1)");
+
+      .close-btn {    
+        position: absolute;    
+        right: 0px; top: 0px;
+        height: 27px; width: 30px;
+        line-height: 30px;
+      }
     }
     #noticeCon {
-      margin: 10px;
+      margin: 0 10px;
+      height: 100%;
+      overflow-y: scroll;  
+      overflow-x: hidden;  
 
       .notice {
+        position: relative;
         display: table;
         padding: 10px 0px;
         width: 100%;
@@ -61,6 +77,10 @@ li{
         
         &:hover {
           background-color: @messageColor;
+
+          .noticeControl {
+            .opacity(1);
+          }
         }
         &:active {
           background-color: lighten(@messageColor, -5%);
@@ -89,7 +109,8 @@ li{
         }
         .noticeContent {
           display: block;     
-          overflow: hidden;         
+          overflow: hidden; 
+          margin-bottom: 10px;
 
           .imgCon {
             float: left; 
@@ -97,10 +118,22 @@ li{
             margin: 0 10px 10px 5px;
           }
           .content {
-            display: block;       
+            display: block;
             margin: 0 5px;
             max-height: 175px;
             line-height: 22px;
+          }
+        }
+        .noticeControl {
+          .opacity(0);
+          display: block;
+          position: absolute;
+          bottom: 0;    
+          width: 100%;          
+          font-size: 12px;
+          .ban-btn {
+            color: @grayLight;
+            margin-right: 5px;
           }
         }
       }
@@ -108,7 +141,7 @@ li{
   }
 }
 
-#noticeboxCon {
+#noticeCon {
   &::-webkit-scrollbar {
     width: 5px;
   }
