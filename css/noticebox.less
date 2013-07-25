@@ -1,12 +1,33 @@
+@import "lesshat.less";
 @import "variable.less";
 
 // NoticeBox
 // --------------------------
-li.active {
-  #noticeBox-btn {
-    background-color: @red;
-
-}
+li{
+  &.active {
+    #noticeBox-btn {
+      .box-shadow (~"0 0 10px rgba(0,0,0,1) inset");
+      
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 3;
+        left: 50%; bottom: -3px;
+        margin-left: -10px;
+        width: 0;
+        border-width: 0px 10px 10px 10px;
+        border-style: solid;
+        border-color: @bodyBackgroundColor transparent;              
+      }
+    }
+  }
+  &.newNotice{
+    #noticeBox-btn {
+      background-color: @red;
+      color: white;
+    }
+  }
 }
 #noticeboxCon {
   position: fixed;
@@ -14,14 +35,14 @@ li.active {
   z-index: 9999;  
   overflow-y: scroll;  
   overflow-x: hidden;  
-
+  .box-shadow(~"-15px 0px 20px -10px rgba(0,0,0,0.2)");
 
   #noticebox { 
     position: relative;
     display: table;
     height: 100%; width: 350px;
     background-color: @bodyBackgroundColor;
-    border: 1px solid @grayLight;
+    border-left: 1px solid @grayLight;
 
     #box-head {
       margin: 7px auto;

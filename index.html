@@ -22,8 +22,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="js/libs/less-1.4.1.min.js"></script>
         <script src="js/vendor/handlebars-1.0.0-rc.4.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>        
-        <script src=""></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
 
         <script id="handler"src="js/handler.js"></script>
         <script src="js/photoListLiner.js"></script>
@@ -91,20 +90,6 @@
             </div>
         </div>
         <!-- end 關於 -->
-        <!--  -->
-        <style>
-            .select2-container .select2-choice{
-                height: 28px;  
-            }
-            .select2-container{
-                margin-top: 3px;
-                margin-right: 3px;
-            }
-            .search-form .btn {
-                margin-top: 3px;
-            }
-
-        </style>
         <div class="navbar navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
@@ -128,10 +113,10 @@
                           <li><a href="#">收藏</a></li>                          
                         </ul>
                         <ul class="nav pull-right">
-                            <li class="active"><a href="#"x id="noticeBox-btn">新回應+25</a></li>
+                            <li class="newNotice active"><a href="#"x id="noticeBox-btn">新回應+25</a></li>
                         </ul>
                     </div>
-                    <form class="navbar-form pull-left ng-scope ng-valid ng-dirty" ng-submit="do_search()" ng-controller="SearchCtrl">
+                    <form class="navbar-form search-form pull-left ng-scope ng-valid ng-dirty" ng-submit="do_search()" ng-controller="SearchCtrl">
                         <div class="select2-container select2-container-multi select2 ng-valid ng-dirty " id="s2id_autogen1" style="width: 200px;">
                             <ul class="select2-choices">
                                 <li class="select2-search-field">
