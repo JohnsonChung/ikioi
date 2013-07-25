@@ -14,11 +14,16 @@
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">        
         <link rel="stylesheet" href="css/combine.less" type="text/less">
         <link rel="stylesheet" href="css/noticebox.less" type="text/less">
+        <link rel="stylesheet" href="css/selector2.css">
+        <link rel="stylesheet" href="css/select2-bootstrap.css">
 
         <script src="js/vendor/jquery-1.9.1.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="js/libs/less-1.4.1.min.js"></script>
         <script src="js/vendor/handlebars-1.0.0-rc.4.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>        
+        <script src=""></script>
 
         <script id="handler"src="js/handler.js"></script>
         <script src="js/photoListLiner.js"></script>
@@ -86,7 +91,20 @@
             </div>
         </div>
         <!-- end 關於 -->
+        <!--  -->
+        <style>
+            .select2-container .select2-choice{
+                height: 28px;  
+            }
+            .select2-container{
+                margin-top: 3px;
+                margin-right: 3px;
+            }
+            .search-form .btn {
+                margin-top: 3px;
+            }
 
+        </style>
         <div class="navbar navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
@@ -99,7 +117,7 @@
                     </a>
 
                     <!-- Be sure to leave the brand out there if you want it shown -->    
-                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc" style="margin: -25px 0 -10px -5px;"></a>
+                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc"></a>
 
                     <!-- Everything you want hidden at 940px or less, place within here -->    
                     <div class="nav-collapse collapse">
@@ -112,6 +130,33 @@
                         <ul class="nav pull-right">
                             <li class="active"><a href="#"x id="noticeBox-btn">新回應+25</a></li>
                         </ul>
+                    </div>
+                    <form class="navbar-form pull-left ng-scope ng-valid ng-dirty" ng-submit="do_search()" ng-controller="SearchCtrl">
+                        <div class="select2-container select2-container-multi select2 ng-valid ng-dirty " id="s2id_autogen1" style="width: 200px;">
+                            <ul class="select2-choices">
+                                <li class="select2-search-field">
+                                    <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="" id="" style="width: 188px; background-image: none; background-position: 0% 0%; background-repeat: repeat repeat;"></li>
+                            </ul>
+                        </div><!-- 
+                         --><div class="select2-container select2 ng-valid ng-dirty" id="s2id_autogen3" style="width: 120px;">
+                            <a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">
+                                <span class="select2-chosen">時間範圍</span> <abbr class="select2-search-choice-close"></abbr>
+                                <span class="select2-arrow"> <b></b>
+                                </span>
+                            </a>
+                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen4" style="background-image: none; background-position: -3px 0px; background-repeat: repeat repeat;"></div><!-- 
+                         --><div class="select2-container select2 ng-valid ng-dirty" id="s2id_autogen5" style="width: 120px;">
+                            <a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">
+                                <span class="select2-chosen">排序方式</span> <abbr class="select2-search-choice-close"></abbr>
+                                <span class="select2-arrow"> <b></b>
+                                </span>
+                            </a>
+                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen6" style="background-image: none; background-position: 0% 0%; background-repeat: repeat repeat;"></div><!--  
+                             --><button type="submit" class="btn"> 
+                                <i class="icon-search"></i>
+                            </button>       
+                    </form>
+
                     </div>
                 </div>
             </div>
