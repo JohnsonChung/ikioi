@@ -1,17 +1,37 @@
+// IMPORT
+@import "lesshat.less";
+
+// bootstrap
+@import "variable.less";
 //
 // div.listCon>div.postCon*5>(div.infoCon)+(div.controlCon)+(div.imgCon)+(div.contentCon)
 @padding: 3px 5px;
 
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  
+  .brand {
+    margin: -18px 0 -10px -10px;
+  }
+}
 .listCon {
   display: block;
+  margin-top: 65px; 
+  width: 100%; 
+  .transition(~"0.5s ease-out");
+  .transition-property( width, margin );
 }
-.postCon {
-  margin: 0px 0px;
-  margin-bottom: 45px;
+.postCon {  
   position: relative;
-  float: left;
-  height: 100%;
-  // don't forget .postCon-noImage
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 20px;  
+  width: 640px;
+  cursor: pointer;
+  .box-shadow(~"0px 5px 10px rgba(0,0,0,0.1)");
 
   .postPointCon {  
     position: absolute;  
@@ -62,109 +82,75 @@
   }
 
   .infoCon {
-    position: absolute;  
-    bottom: 45px;
-    font-size: 15px;
+    position: absolute;    
+    z-index: 0;
+    left: 0; bottom: 0;
     
     .title, .name, .replyCount {   
-      float: left; 
+      float: left;
+      clear: left;
       padding: @padding;
     }
-    .title {
-      padding-left: 16px;
-      padding-right: 16px;
-      
-      background-color: darken( @bodyBackgroundColor, 5% );
+    .title {      
+      background-color: @fontColor;
       font-weight: bold;
+      color: white;
     }
     .name {
-      background-color: gray;
+      background-color: @grayLight;
       color: white;
+      font-size: 12px;
     }
-    .replyCount {    
-      background-color: gray;
+    .replyCount {
+      background-color: @grayLight;
       color: white;
+      font-size: 12px;
     }
   }
   .controlCon {
     
   }
-}
-.imgCon {  
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in;
-  height: 100%;
 
-  img{    
-    position: relative;
-    z-index: -1;
-    height: 100%;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in;
-  } 
-  &:hover {
-    box-shadow: 0px 0px 40px white inset;
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-}
-.contentCon {
-  position: absolute;
-  left: 0; bottom: -1px; //Adjust image Height overFlow
-  width: 100%;  
-  height: 45px;  
-  overflow: hidden;
-  background-color: @bodyBackgroundColor;
-  border-top: 1px solid black;
-  .transition(~".2s ease-in-out 1s");
-  .transition-property( margin, height, background-color, box-shadow);
-  
-  .content {
-    display: block;
-    font-size: 13px;
-    margin: 3px 10px;
-    height: 100%;
-    line-height: 20px !important;
-    color: @fontColor;
-    overflow: hidden;   
-    .transition(~".5s ease-in-out 1s");
-    .transition-property(margin, height);
-  }
-  .footer {
-    position: absolute;
-    right: 5px; bottom: 5px;
-    .opacity(0);
-    .transition(~"opacity.5s ease-in-out");
+  .imgCon {   
+    float: left;
+    max-width: 320px;
+    overflow: hidden;
+    .transition(~".2s ease-in-out");
+    .transition-property( box-shadow, background-color );
 
-    .replyCount {      
-      float: left;
-      padding-right: 3px;
-      font-size: 12px;
+    img {
+      position: relative;
+      z-index: -1;
+      height: 200px;
+    }
+    &:hover {
+      box-shadow: 0px 0px 40px white inset;
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
-  &:hover {
-    height: 100%;        
-    background-color: darken(@bodyBackgroundColor, 2%);
-    box-shadow: 0px -20px 30px -10px @messageColor inset;
-    .transition(~".2s ease-in-out");
-    .transition-property( margin, height, background-color, box-shadow);
+  .contentCon {   
+    position: relative;
+    z-index: 1;
+    overflow: hidden;    
+    background-color: @bodyBackgroundColor;
 
-    .content {
-      height: -moz-calc(100% - 25px);
-      height: -webkit-calc(100% - 25px);
-      height: -o-calc(100% - 25px);
-      height: calc(100% - 25px);
-      margin-top: 30px;      
-      .transition(~".5s ease-in-out");
-      .transition-property(margin, height);
+    .content {     
+      float: left;
+      padding: 15px 10px 0px 10px ;
+      height: 185px; 
+      line-height: 23px;
+      color: @fontColor;      
     }
     .footer {
-      .opacity(1);
-    }
+      display: none;
 
+      .replyCount {      
+      }
+    }
   }
 }
 
-// After jQuery Special Adjustment
+// After jQuery Adjustment
 .postCon-noImage {
   
   .contentCon {
