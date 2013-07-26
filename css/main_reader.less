@@ -75,7 +75,8 @@
     position: relative;
     float: left;
     clear: left;
-    margin: 0 20px 20px 20px;    
+    margin: 0 20px 20px 20px;  
+    min-width: 30px;  
 
     .attach-control {    
       .opacity(0);
@@ -86,6 +87,28 @@
         position: absolute;
         right: 3px; bottom: 3px;
         z-index: 3;
+      }
+    }
+    &.img-expired {
+      
+      .attach-link {
+        cursor: default;
+      }
+      &:hover {
+        &:before {
+          .opacity(1);
+        }
+      }
+      &:before {
+        content: "原圖消失";
+        position: absolute;
+        left: 3px; bottom: 5px;
+        line-height: 14px;
+        color: white;
+        font-size: 10px;          
+        text-shadow: 1px 1px 1px gray, -1px -1px 1px gray;
+        .opacity(0);
+        .transition(~"opacity 0.1s ease-in");
       }
     }
     &:hover {
@@ -102,11 +125,6 @@
 .content-main {
   width: 100%;
 }
-
-
-// FOOTER
-// --------------------------
-
 
 // dynamic Container 
 // --------------------------
@@ -202,6 +220,10 @@
     }    
     .linkPost {
       background-color: @blue; 
+      i {
+        line-height: 24px;
+        vertical-align: -3px;
+      }
     }
     .postPoint { 
       padding-right: 5px;
