@@ -121,10 +121,15 @@
             form.stop()
                 .transition({x:30}, 200)
                 .transition({x:00}, 500);
-            type.transition({                
-              perspective: '100px',
-              rotate3d: '1,1,0,360deg'
-            })
+            type.transition({}, 1000)
+                .transition({                
+                  perspective: '200px',
+                  rotate3d: '1,0,0,360deg'
+                });
+            type.find("li").each( function(i) {
+                $(this).delay(200*i).transition({y:-40}, 200)
+                    .transition({y:0}, 200);                    
+            });
         })
         $('.btn-submit').bind( "click", function() {
             form.toggleClass("open");

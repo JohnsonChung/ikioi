@@ -117,7 +117,10 @@ li {
 					span.glyphicon {
 						display: block;
 						margin: 0 auto;	
-						font-size: 16px;
+						font-size: 16px;	    		
+						.transition(~"0.3s ease-out");
+	    				.transition-property(color, font-size);
+
 					}
 					&:hover {
 						background-color: lighten(@messageColor , 5%);
@@ -186,7 +189,22 @@ li {
 					.size(80px, 50px);
 
 					span.glyphicon {	
-						font-size: 22px;				
+						font-size: 22px;		
+					}
+					.glyphicon-picture{
+						color: @red;
+					}
+					.glyphicon-plane{
+						color: @orange;
+					}
+					.glyphicon-shopping-cart{
+						color: @green;
+					}
+					.glyphicon-usd{
+						color: @blue;
+					}
+					.glyphicon-plus {
+						color: @purple;
 					}
 				}
 			}
