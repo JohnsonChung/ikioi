@@ -127,10 +127,10 @@
                   rotate3d: '1,0,0,360deg'
                 });
             type.find("li").each( function(i) {
-                $(this).delay(200*i).transition({y:-40}, 200)
+                $(this).stop().delay(200*i).transition({y:-40}, 200)
                     .transition({y:0}, 200);                    
             });
-        })
+        });
         $('.btn-submit').bind( "click", function() {
             form.toggleClass("open");
             tform.empty();
@@ -139,7 +139,34 @@
               perspective: '100px',
               rotate3d: '0,0,0,0deg'
             })
-        })
+        });
+
+        var tri = 1;
+        form.bind( "dblclick", 
+            function( ) {        
+                if(tri === 1){
+                    $('.replyForm').transition({                
+                        perspective: '1000px',
+                        rotate3d: '0,1,0, 180deg'                        
+                    });
+                    $('.contentFormCon, .attachTypeCon, .btn-submit').transition({
+                        "opacity": 0
+                    })
+                    tri = 0;
+                } else {
+                    $('.replyForm').transition({                
+                        perspective: '1000px',
+                        rotate3d: '0,1,0, 0deg',
+                        "opacity": "1"
+                    });
+                    $('.contentFormCon, .attachTypeCon, .btn-submit').transition({
+                        "opacity": 1
+                    })
+
+                    tri = 1;
+                }   
+            }
+        );    
     });
 
 }(window.jQuery);
