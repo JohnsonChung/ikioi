@@ -101,9 +101,9 @@ li {
 			}
 		}
 		.attachTypeCon {
-			display: none;
-			background-color: @grayLighter;
-			.size(600px, auto);
+			background-color: @messageColor;
+			.size(450px, auto);			
+			.border(@grayLighter);
 
 			ul.attachType {
 				display: table;
@@ -111,14 +111,17 @@ li {
 				text-align: center;				
 
 				li {
-					display: inline-block;					
-					background-color: @grayLighter;
+					display: inline-block;		
 					line-height: 25px;
+					cursor: pointer;
 					.size(80px, 50px);
 
 					span.glyphicon {
 						display: block;
 						margin: 0 auto;						
+					}
+					&:hover {
+						background-color: lighten(@messageColor , 5%);
 					}
 				}
 			}
