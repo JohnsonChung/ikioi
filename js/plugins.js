@@ -114,17 +114,26 @@
     $(document).ready( function(){        
         var form = $('.replyForm');
         var tform = $('.replyForm .contentForm');
+        var type = $('.attachTypeCon');
 
         tform.bind( "focus", function() {
             form.toggleClass("open");
             form.stop()
-                .transition({x:80}, 200)
+                .transition({x:30}, 200)
                 .transition({x:00}, 500);
+            type.transition({                
+              perspective: '100px',
+              rotate3d: '1,1,0,360deg'
+            })
         })
         $('.btn-submit').bind( "click", function() {
             form.toggleClass("open");
             tform.empty();
             tform.stop().transition({});
+            type.transition({                
+              perspective: '100px',
+              rotate3d: '0,0,0,0deg'
+            })
         })
     });
 
