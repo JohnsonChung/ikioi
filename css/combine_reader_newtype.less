@@ -67,16 +67,15 @@ li {
 
 	.replyForm {		
 		position: relative;
+		background-color: @messageColor;
 		left: 0;
 		display: table;
 		margin: 0 auto;		
 		margin: 0 0px 0 40px;	
-		
-	    .transition(~"all 0.8s ease-in");
+	    .transition(~"all 0.3s ease-out");
 
 		.contentFormCon {
-			display: block;
-			background-color: @messageColor;			
+			display: block;			
 			.size(450px, 40px);
 			.border(@grayLighter);
 			.transition(~"height 0.3s ease-out");
@@ -101,7 +100,6 @@ li {
 			}
 		}
 		.attachTypeCon {
-			background-color: @messageColor;
 			.size(450px, auto);			
 			.border(@grayLighter);
 
@@ -148,11 +146,11 @@ li {
 		border: 1px solid @grayLight;
 		border-radius: 10px;
 		overflow: hidden;
+		background-color: @grayLighter;
 		.box-shadow(~"0 0 40px rgba(0,0,0,0.3)");
 
 		.contentFormCon {
 			display: block;
-			background-color: @grayLighter;
 			.size(600px, 330px);
 
 			textarea.contentForm {
