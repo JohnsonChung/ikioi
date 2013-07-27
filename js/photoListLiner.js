@@ -1,5 +1,7 @@
 // 取代錯誤圖片
 $(document).ready( function(){
+    $('.postCon').css({"margin":"0 10px 45px 10px"});
+    $('.imgCon img').css({"width":"100%", "height":"100%"});
     $('img').one('error', function(){
         $(this).unbind("error").attr("src", "broken.gif");
         console.log('img error');
@@ -19,12 +21,12 @@ jQuery( function ($) {
 
     var methods = {
         init: function () {
-            this.cacheElements();
+            this.cacheElements();            
+            this.windowResize();
             this.bindEvents();
             this.getImgAttr();
             this.exceptionJudge();
             this.getHeight();
-            this.windowResize();
         },
         cacheElements: function () {
             this.$imgCon = $('.imgCon');
@@ -49,7 +51,8 @@ jQuery( function ($) {
 
             //將每個圖片長寬放入陣列 imgAttr[[height, width],[...]]
             this.$imgCon.find('img.postImg').each(function () {
-                imgAttr.push([$(this).height(), $(this).width(), $(this).attr('src')]);
+                var w = $(this).width() + 20;
+                imgAttr.push([$(this).height(), w, $(this).attr('src')]);
             });            
             //圖片數量
             // imgQuantity = this.$imgCon.find('img.postImg').size();
@@ -58,7 +61,7 @@ jQuery( function ($) {
         }, //do the Math 
 
         getHeight: function () {
-            var lineHeight = 400; //每一行最高高度
+            var lineHeight = 350; //每一行最高高度
             var lineWidth = $(window).width(); //瀏覽器寬度
             var outputHeight = 0; //每一行輸出高度
 
@@ -96,7 +99,7 @@ jQuery( function ($) {
                 if( $(this).attr('src') === 'broken.gif') {
                     $(this).parents('div.postCon').toggleClass('postCon-noImage');
                 }
-            });
+            });            
             console.log('Set Style Complete!');
         },
         windowResize: function() {

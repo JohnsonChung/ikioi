@@ -104,7 +104,28 @@
         $(window).on( 'scroll',  function(){
             // scrollStartTrigger();
             scrollEndTrigger();
-        });
+        });        
+    });
+
+}(window.jQuery);
+
+// transit Play
+!function ($){
+    $(document).ready( function(){        
+        var form = $('.replyForm');
+        var tform = $('.replyForm .contentForm');
+
+        tform.bind( "focus", function() {
+            form.toggleClass("open");
+            form.stop()
+                .transition({x:80}, 200)
+                .transition({x:00}, 500);
+        })
+        $('.btn-submit').bind( "click", function() {
+            form.toggleClass("open");
+            tform.empty();
+            tform.stop().transition({});
+        })
     });
 
 }(window.jQuery);

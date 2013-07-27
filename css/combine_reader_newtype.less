@@ -52,3 +52,154 @@ li {
   list-style: none;
 }
 // bootstrap Adjust
+
+// transit Play
+.border(@c:red) {
+	border: 1px solid @c;
+}
+.replyFormCon {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	width: 960px;
+	background-color: @bodyBackgroundColor;
+	padding: 40px 0;	
+
+	.replyForm {		
+		position: relative;
+		left: 0;
+		display: table;
+		margin: 0 auto;		
+		margin: 0 0px 0 40px;	
+		
+	    .transition(~"all 0.8s ease-in");
+
+		.contentFormCon {
+			display: block;
+			background-color: @messageColor;			
+			.size(450px, 40px);
+			.border(@grayLighter);
+			.transition(~"height 0.3s ease-out");
+			.transition-property(background, height, width);
+
+			textarea.contentForm {
+				display: table;				
+				margin: 5px auto;				
+				width: 80%;
+				height: 20px;
+
+	    		.transition(~"0.3s ease-out");
+	    		.transition-property(text-align, height, width);
+			}
+		}
+		.attachFormCon {
+			display: block;
+			background-color: @grayLighter;
+
+			.attchForm {
+
+			}
+		}
+		.attachTypeCon {
+			display: none;
+			background-color: @grayLighter;
+			.size(600px, auto);
+
+			ul.attachType {
+				display: table;
+				margin: 0 auto;
+				text-align: center;				
+
+				li {
+					display: inline-block;					
+					background-color: @grayLighter;
+					line-height: 25px;
+					.size(80px, 50px);
+
+					span.glyphicon {
+						display: block;
+						margin: 0 auto;						
+					}
+				}
+			}
+		}
+		.formConrtrolCon {
+			display: none;
+			background-color: @grayLight;
+			.size(600px, auto);
+
+			.btn-submit{
+				display: table;
+				margin: 0 auto;
+				text-align: center;		
+			}
+		}	
+	}
+
+	.replyForm.open {
+		position: relative;
+		left: 50%;
+		margin-left: -300px;
+		margin-top: 40px;
+		display: table;	
+		border: 1px solid @grayLight;
+		border-radius: 10px;
+		overflow: hidden;
+		.box-shadow(~"0 0 40px rgba(0,0,0,0.3)");
+
+		.contentFormCon {
+			display: block;
+			background-color: @grayLighter;
+			.size(600px, 330px);
+
+			textarea.contentForm {
+				display: table;				
+				margin: 45px auto;				
+				width: 80%;
+				height: 230px;
+			}
+		}
+		.attachFormCon {
+			display: block;
+			background-color: @grayLighter;
+
+			.attchForm {
+
+			}
+		}
+		.attachTypeCon {
+			display: block;
+			background-color: @grayLighter;
+			.size(600px, auto);
+
+			ul.attachType {
+				display: table;
+				margin: 0 auto;
+				text-align: center;				
+
+				li {
+					display: inline-block;					
+					background-color: @grayLighter;
+					line-height: 25px;
+					.size(80px, 50px);
+
+					span.glyphicon {
+						display: block;
+						margin: 0 auto;						
+					}
+				}
+			}
+		}
+		.formConrtrolCon {
+			display: block;
+			background-color: @grayLighter;
+			.size(600px, auto);
+
+			.btn-submit{
+				display: table;
+				margin: 0 auto;
+				text-align: center;		
+			}
+		}
+	}
+}

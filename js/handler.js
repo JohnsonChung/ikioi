@@ -21,7 +21,7 @@ var context = {
   	BOARDNAME: "綜合二",
   	POINT: 45623,
   	SWATCHES: 3,
-    TITLE: "",
+    TITLE: "ㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZㄈㄓZ",
     NAME: "ㄈㄓZ",
     CONTENT: "李嫌和王女原本約在高鐵台南站見面，因鄰居發現王母失蹤",
     imgNo: "02",

@@ -75,10 +75,12 @@
   .infoCon {
     position: absolute;  
     bottom: 45px;
+    width: 100%;
+    overflow: hidden;
     font-size: 15px;
     
     .title, .name, .replyCount {   
-      float: left; 
+      float: left;       
       padding: @padding;
     }
     .title {
@@ -154,7 +156,7 @@
       height: 100%;        
       background-color: darken(@bodyBackgroundColor, 2%);
       box-shadow: 0px -20px 30px -10px @messageColor inset;
-      .transition(~".2s ease-in-out");
+      .transition(~".1s ease-in-out");
       .transition-property( margin, height, background-color, box-shadow);
 
       .content {

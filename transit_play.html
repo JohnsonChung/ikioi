@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">        
+        <link rel="stylesheet" href="css/bootstrap-glyphicons.less" type="text/less">        
+        <link rel="stylesheet" href="css/lesshat.less" type="text/less">
+        <link rel="stylesheet" href="css/combine_reader_newtype.less" type="text/less">
+        <link rel="stylesheet" href="css/main_reader_newtype.less" type="text/less">
+        
+        <script src="js/vendor/jquery-1.9.1.js"></script>
+        <script src="js/libs/less.js-1.3.3/less.min.js"></script>
+        <script src="js/vendor/handlebars-1.0.0-rc.4.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>        
+        <script src="js/vendor/transit-0.9.9.js"></script>        
+
+        <script id="handler"src="js/handler-reader.js"></script>
+        <script src="js/plugins.js"></script>
+    </head>    
+    <body>
+
+            <!-- div.replyFormCon>.replyForm>(.contentFormCon>textarea.contentForm)+(.attachFormCon>.attachForm)+(.attachTypeCon>ul.attachType>li*5>span.glyphicon.glyphicon-picture+{圖片}) -->
+            <div class="replyFormCon">
+                <div class="replyForm">
+                    <div class="contentFormCon"><textarea name="" id="" class="contentForm" placeholder="請在這裡輸入..."></textarea></div>
+                    <div class="attachFormCon">
+                        <div class="attachForm"></div>
+                    </div>
+                    <div class="attachTypeCon">
+                        <ul class="attachType">
+                            <li><span class="glyphicon glyphicon-picture"></span>圖片</li><!-- 
+                         --><li><span class="glyphicon glyphicon-picture"></span>圖片</li><!-- 
+                         --><li><span class="glyphicon glyphicon-picture"></span>圖片</li><!-- 
+                         --><li><span class="glyphicon glyphicon-picture"></span>圖片</li><!-- 
+                         --><li><span class="glyphicon glyphicon-picture"></span>圖片</li>
+                        </ul>
+                    </div>
+                    <div class="formConrtrolCon">
+                        <a class="btn btn-success btn-submit"> Submit </a>
+                    </div>
+                </div>
+            </div>
+
+            <script id="template" type="text/x-handlebars-template">
+            <div class="article">
+                <div class="article-head">                   
+                    <div class="controlCon">
+                        <div class="controlCon">Control-Group</div>
+                    </div>
+                </div>
+                <div class="article-body">
+                    <div class="messageCon">
+                        <div class="message message-main">
+                            <div class="message-head main-head">                        
+                                <div class="infoCon">
+                                    <div class="title">{{{TITLE}}}</div>
+                                    <div class="name">{{NAME}}</div>
+                                    <div class="posttime">{{{POSTTIME}}}</div>
+                                    <div class="postnumber">{{POSTNUMBER}}</div>
+                                </div>
+                                <div class="attach attach-main">
+                                    <a href="#"><img alt="" src="" /></a>
+                                    <div class="attach-control">
+                                        <a class="image-search-btn" title="google 圖片搜尋"><img src="img/icon-google.png" height="18" width="18" alt=""></a>
+                                    </div>
+                                </div> 
+                                <div class="controlCon"></div>
+                            </div>
+                            <div class="message-body main-body">        
+                                <p class="content content-main">
+                                    {{{CONTENT}}}
+                                </p>
+                            </div>
+                            <div class="message-footer main-footer">                                
+                            </div>
+                        </div>
+                        {{#each comments}}
+                        <div class="message">
+                            <div class="message-head">
+                                <div class="infoCon">
+                                    <div class="title">{{TITLE}}</div>
+                                    <div class="name">{{NAME}}</div>
+                                    <div class="posttime">{{POSTTIME}}</div>
+                                    <div class="postnumber">{{POSTNUMBER}}</div></div>
+                                <div class="controlCon">Control-Group</div>
+                            </div>
+                            <div class="message-body">
+                                <div class="attach">
+                                    <a href="#"><img alt="" src="" /></a>
+                                    <div class="attach-control">
+                                        <a class="image-search-btn" title="google 圖片搜尋"><img src="img/icon-google.png" height="18" width="18" alt=""></a>
+                                    </div>
+                                </div>
+                                <p class="content">
+                                    {{{CONTENT}}}
+                                </p>
+                            </div>
+                            <div class="message-footer">
+                                <div class="rating">G&B</div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="article-footer"></div>                    
+                <div id="fixed-control">
+                    <a href="#" id="fixed-top-btn"><i class="icon-arrow-up"></i></a>
+                    <a href="#" id="fixed-forward-btn"><</a>
+                    <a href="#"id="fixed-next-btn">></a>
+                </div>
+            </div></script>            
+
+            <div class="box"></div>
+
+            <div id="dynamicCon-bottom">
+                <div id="dynamic-container-bottom">                
+                    ==dynamic-container-bottom==
+                    <div id="reply-form">
+                        <div class="article-form">
+                            <div class="form-head"></div>
+                            <div class="form-body"></div>
+                            <div class="form-footer"></div>
+                        </div>
+                        <div class="attachment-form">
+                            <div class="form-head"></div>
+                            <div class="form-body"></div>
+                            <div class="form-footer"></div>
+                        </div>
+                    </div>
+                    ==dynamic-container-bottom==
+                </div>
+            </div>
+    </body>
+</html>
