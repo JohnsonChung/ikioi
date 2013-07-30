@@ -65,7 +65,7 @@
                     </a>
 
                     <!-- Be sure to leave the brand out there if you want it shown -->    
-                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc" style="margin: -25px 0 -10px -5px;"></a>
+                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc"></a>
 
                     <!-- Everything you want hidden at 940px or less, place within here -->    
                     <div class="nav-collapse collapse">
@@ -80,35 +80,13 @@
                 </div>
             </div>
         </div>
-        <!-- div.listCon>({{{#each comments}}}+div.postCon)>(div.postPoint{{{POINT}}})+(div.infoCon>(div.title{{{TITLE}}}+div.name{{{NAME}}}))+(div.controlCon)+(div.imgCon>img[src="img/album/{{imgNo}}.jpg"])+(div.contentCon>(div.content{{{CONTENT}}}+div.replyCount)) -->
-        <!-- <div class="listCon">
-            {{#each comments}}
-            <div class="postCon">
-                <div class="postPoint">{{POINT}}</div>
-                <div class="infoCon">
-                    <div class="title">{{TITLE}}</div>
-                    <div class="name">{{NAME}}</div>
-                </div>
-                <div class="controlCon"></div>
-                <div class="imgCon"><img src="img/album/{{imgNo}}.jpg"></div>
-                <div class="contentCon">
-                    <div class="content">{{CONTENT}}</div>
-                    <div class="replyCount"></div>
-                </div>
-            </div>
-            {{/each}}
-        </div> <-->   
-        <!-- system message -->
-        <div id="alertCon">
-            <div class="alert">伺服器正在維護中，於今天晚上重新回復營運。</div>
-        </div>
-
         <script id="entry-template" type="text/x-handlebars-template">
             <div class="listCon">
             {{#each comments}}
             <div class="postCon">
                 <div class="postPointCon">
                     <div class="boardName">{{BOARDNAME}}</div>
+                    <div class="replyCount">{{REPLYCOUNT}}</div>
                     <div class="postPoint swatches{{SWATCHES}}">{{POINT}}</div>
                     <div class="pointArrow swatches{{SWATCHES}}"><img src="img/arrowLevelDown.png" title="上升"></div>
                 </div>
@@ -121,33 +99,13 @@
                 <div class="contentCon">
                     <div class="content">{{{CONTENT}}}</div>
                     <div class="footer">                        
-                        <div class="replyCount">{{REPLYCOUNT}}</div>
                     </div>  
                 </div>
             </div>
             {{/each}}
         </div>
         </script>
-        <!-- <div class="postCon postCon-horizontal">
-            <div class="postPointCon">
-                <div class="boardName">新聞速報</div>
-                <div class="postPoint swatches1">78,645,456</div>
-            </div>
-            <div class="infoCon">
-                <div class="title">123123</div>
-                <div class="name">123</div>
-            </div>
-            <div class="controlCon"></div>
-            <div class="imgCon"><img class="postImg" src="img/album/03.jpg" style="width: 166.0472664541942px; height: 328.5594725581069px;"></div>
-            <div class="contentCon">
-                <div class="content">外來種賤女狗公惱羞開始血尿跳針哭哭ㄛwwwwww&lt;br&gt;護航乙</div>
-                <div class="footer">                        
-                    <div class="replyCount">432</div>
-                </div>  
-            </div>
-        </div> -->
         <div class="box">
-            <h1>星期五 - 今日熱門</h1>
             <!-- result container -->
         </div>
         <footer>
