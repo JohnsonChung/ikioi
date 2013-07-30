@@ -21,7 +21,7 @@
   margin-top: 45px;
   max-width: 880px;
   background-color: @bodyBackgroundColor;  
-  
+
   .infoCon {    
     display: block;
     margin: 3px 5px;
@@ -351,6 +351,12 @@
     width: 50px;
     text-align: center;
     background-color: @messageColor;
+    border: 1px solid @grayLight;
+    border-radius: 10px;
+
+    &:hover {
+      .box-shadow(~"0 0 20px rgba(0,0,0,0.1) inset");
+    }
   }
 }
 #dynamicCon-bottom {
