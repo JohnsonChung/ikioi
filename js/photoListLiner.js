@@ -7,8 +7,11 @@ $(document).ready( function(){
         console.log('img error');
     });
 })
+
+
 // Main
 jQuery( function ($) {
+    
     var imgAttr = [],
         imgAttrOutput = [],
         imgQuantity = 0;
@@ -30,6 +33,7 @@ jQuery( function ($) {
         },
         cacheElements: function () {
             this.$imgCon = $('.imgCon');
+            this.$postCon = $('.postCon');
             console.log('cacheEvent Complete!');
         },
         bindEvents: function () {
@@ -93,13 +97,16 @@ jQuery( function ($) {
             this.setStyle();
         }, 
 
-        setStyle: function () {                                
+        setStyle: function () {     
+            this.$postCon.each(function (index) {
+                $(this).height(imgAttrOutput[index][0]);
+            });                             
             this.$imgCon.find("img").each(function (index) {
                 $(this).width(imgAttrOutput[index][1] - 20).height(imgAttrOutput[index][0]);
                 if( $(this).attr('src') === 'broken.gif') {
                     $(this).parents('div.postCon').toggleClass('postCon-noImage');
                 }
-            });            
+            });   
             console.log('Set Style Complete!');
         },
         windowResize: function() {

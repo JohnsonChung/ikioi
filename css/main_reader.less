@@ -217,22 +217,25 @@
       padding: 0 5px;          
       height: 24px;
       line-height: 24px;
-      float: left;
+      float: left;      
     }
     .boardName {       
     }    
     .linkPost {
       background-color: @blue; 
-      i {
-        line-height: 24px;
-        vertical-align: -3px;
-      }
+    }
+    .linkPost.linkExpire {
+      background-color: darken(@blue ,10%);
     }
     .postPoint { 
       padding-right: 5px;
     }
     .pointArrow {
       line-height: 20px;
+    }
+    .glyphicon {
+      font-size: 12px;
+      vertical-align: -1px;
     }
     a{
       color: @white !important;
@@ -312,6 +315,10 @@
       border-color: lighten(@fontColor, 10%) transparent;    
     }
   }
+  .glyphicon {
+    color: white;
+    font-size: 11px;
+  }
 }
 .article-head {  
 } 
@@ -319,30 +326,35 @@
 #fixed-control {
   
   #fixed-forward-btn, #fixed-next-btn {
-    height: 100px; line-height: 100px;
+    height: 75px; line-height: 75px;
     width: 50px;
-    background-color: fadeout(@messageColor, 50%);
+    background-color: fadeout(@messageColor, 20%);
     border: 1px solid transparent;    
     text-align: center;
     color: @fontColor;
     text-decoration: none;
-    .transition(~"top 0.5s linear");
+    .transition(~"top 0.1s linear");
     .transition-property(background-color, top, bottom, left, right);
 
     &:hover {
       background-color: fadeout(@messageColor, 0%);      
       font-weight: bold;
     }
+
+    .glyphicon {    
+      font-size: 22px;
+      vertical-align: -5px;
+    }
   } 
   #fixed-forward-btn {
     position: fixed;
     bottom: 25%; left: 10px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 5px;
   }
   #fixed-next-btn {
     position: fixed;
     bottom: 25%; right: 10px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 5px;
   }
   #fixed-top-btn {
     position: fixed;

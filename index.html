@@ -25,8 +25,6 @@
 
         <script id="handler"src="js/handler.js"></script>
         <script src="js/photoListLiner.js"></script>
-        <script src="js/jquery.autoellipsis-1.0.10.min.js"></script>
-        <!-- http://pvdspek.github.io/jquery.autoellipsis/ -->
 <!-- 
         <script>
             $(window).load( function() {
@@ -137,10 +135,9 @@
             {{/each}}
         </div> <-->   
         <!-- system message -->
-        <div id="alertCon">
+        <div id="alertCon" style="display:none">
             <div class="alert">伺服器正在維護中，於今天晚上重新回復營運。</div>
         </div>
-
         <script id="entry-template" type="text/x-handlebars-template">
             <div class="listCon">
             {{#each comments}}
@@ -151,22 +148,33 @@
                     <div class="postPoint swatches{{SWATCHES}}">{{POINT}}</div>
                     <div class="pointArrow swatches{{SWATCHES}}"><img src="img/arrowLevelDown.png" title="上升"></div>
                 </div>
-                <div class="infoCon">
-                    <div class="title">{{TITLE}}</div>
-                    <div class="name">{{NAME}}</div>
-                    <div class="replyCount">{{REPLYCOUNT}}</div>
-                </div>
                 <div class="controlCon"></div>
-                <div class="imgCon"><img class="postImg" src="img/album/{{imgNo}}.jpg"></div>
+                <div class="imgCon">
+                    <img class="postImg" src="img/album/{{imgNo}}.jpg">
+                    <div class="imgControl"><a class="imgLink">
+                        <span class="glyphicon glyphicon-share"></span>
+                    </a></div>
+                </div>
                 <div class="contentCon">
+                    <div class="lineBloker"></div>
+                    <div class="infoCon">                    
+                        {{#if NAME}}
+                        <div class="name">{{NAME}}</div>
+                        {{/if}}
+                        {{#if TITLE}}
+                        <div class="title">{{TITLE}}</div>
+                        {{/if}}
+                    </div>
                     <div class="content">{{{CONTENT}}}</div>
-                    <div class="footer">                        
+                    <div class="footer">  
+                        <div class="time">{{{TIME}}}</div>
                     </div>  
                 </div>
             </div>
             {{/each}}
         </div>
         </script>
+
         <!-- <div class="postCon postCon-horizontal">
             <div class="postPointCon">
                 <div class="boardName">新聞速報</div>
@@ -188,7 +196,7 @@
         <div class="box">
             <!-- result container -->
         </div>
-        <div id="noticeboxCon" style="display:none;">
+        <div id="noticeboxCon" style="display:none">
             <div id="noticebox">
                 <div id="box-head">
                     來自收藏匣裡的新回應
@@ -208,7 +216,7 @@
                             <div class="content">不會游泳，現在要進去海陸新訓了........ <br>感覺這一年當兵生活會很慘</div>
                         </div>
                         <div class="noticeControl">
-                            <a href="" class="ban-btn pull-right">不要通知<i class="icon-volume-off"></i></a>
+                            <a href="" class="ban-btn pull-right">不要通知 <span class="glyphicon glyphicon-volume-off"></span></a>
                         </div>
                     </div>
 
@@ -223,7 +231,7 @@
                             <div class="content">搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李搞不好李嫌跟王女真的有交往過<br>因為某某原因而否認了就跟以前認識某女明明就有暗示我告白<br>結果我沒告白就到處抹黒我說我有嚴重妄想症一樣</div>
                         </div>
                         <div class="noticeControl">
-                            <a href="" class="ban-btn pull-right">不要通知<i class="icon-volume-off"></i></a>
+                            <a href="" class="ban-btn pull-right">不要通知 <span class="glyphicon glyphicon-volume-off"></span></i></a>
                         </div>
                     </div>
                     
