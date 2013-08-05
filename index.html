@@ -21,45 +21,18 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="js/libs/less-1.4.1.min.js"></script>
         <script src="js/vendor/handlebars-1.0.0-rc.4.js"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>        
+        <script src="js/vendor/bootstrap.min.js"></script> 
 
         <script id="handler"src="js/handler.js"></script>
         <script src="js/photoListLiner.js"></script>
-<!-- 
-        <script>
-            $(window).load( function() {
-                $('div.contentCon').ellipsis('.content'); 
-            })
-        </script>
- -->
-        <style>      
-            body {
-                position: relative;
-            }  
-            .introCon {
-                display: block;
-                position: fixed;
-                z-index: 777;
-                height: 100%;
-                width: 100%;
-                background-color: rgba(255,255,255,0.91);  
-                text-align: center;
-            }
-            #intro-cat {
-                position: fixed;
-                top: 50%;
-                width: 130px;
-                text-align: center;
-                margin-top: -59px;
-                margin-left: -50px;
-            }
-        </style>
     </head>
     <body>
-            <!-- 
-        <div class="introCon">
-            <img id="intro-cat" src="img/walking-cat.gif" alt="">
-        </div> -->
+            
+        <div id="introCon">
+            <div id="intro">
+                <img id="intro-cat" src="img/walking-cat.gif" alt="">
+            </div>
+        </div>
         <div class="modal fade ng-scope in" style="display: none;">
             <div class="modal-header">
                 <h3>關於Komica.cc</h3>
@@ -166,6 +139,7 @@
                         {{/if}}
                     </div>
                     <div class="content">{{{CONTENT}}}</div>
+                    <div class="reply">{{{CONTENT}}}</div>
                     <div class="footer">  
                         <div class="time">{{{TIME}}}</div>
                     </div>  

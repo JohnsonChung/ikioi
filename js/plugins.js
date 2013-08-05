@@ -131,8 +131,9 @@
             // scrollStartTrigger();
             scrollEndTrigger();
         });        
-        var rightAdj = -(getScrollBarWidth() / 2)
-        $('.article').css({'right':rightAdj});
+        // adjust fix Scrollbar problem
+        // var rightAdj = -(getScrollBarWidth() / 2)
+        // $('.article').css({'right':rightAdj});
     });
 
 }(window.jQuery);

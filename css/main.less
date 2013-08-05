@@ -156,21 +156,49 @@
     overflow: hidden;
     background-color: @bodyBackgroundColor;
     border-top: 1px solid black;
-    .transition(~".2s ease-in-out 1s");
+    .transition(~".2s ease-in-out");
     .transition-property( margin, height, background-color, box-shadow);
     
+    &:hover {
+      height: 100%;        
+      background-color: darken(@bodyBackgroundColor, 2%);
+      box-shadow: 0px 20px 40px -10px @messageColor inset;
+
+      .reply {
+        background-color: darken(@bodyBackgroundColor, 2%);
+        .box-shadow(~"0px -10px 10px 0px #ffffe4");
+      }
+    }
     .content {
       display: block;
       font-size: 15px;
       margin: 3px 10px; 
       margin-bottom: 20px;
-      height: 75%;   
+      height: 200px;   
       line-height: 25px !important;
       vertical-align: middle;
       color: @fontColor;
       overflow: hidden;   
       .transition(~".5s ease-in-out 1s");
       .transition-property(margin, height);
+    }
+    .reply {            
+      position: absolute;
+      right: 0; bottom: 30px;
+      width: 210px;
+      height: 55px;
+      padding: 4px 10px;
+      border-top: 1px solid @grayLighter;
+      overflow: hidden;
+      font-size: 12px; 
+      background-color: @bodyBackgroundColor;     
+      .box-shadow(~"0px -10px 10px 0px #ffffee");
+      .transition(~".2s ease-in-out");
+      .transition-property( margin, height, background-color, box-shadow);
+
+      &:hover {
+        background-color: white;
+      }
     }
     .footer {
       position: absolute;
@@ -182,13 +210,6 @@
     .lineBloker {
       width: 100%;
       height: 15px;
-    }
-    &:hover {
-      height: 100%;        
-      background-color: darken(@bodyBackgroundColor, 2%);
-      box-shadow: 0px 20px 40px -10px @messageColor inset;
-      .transition(~".1s ease-in-out");
-      .transition-property( margin, height, background-color, box-shadow);
     }
   }
 }

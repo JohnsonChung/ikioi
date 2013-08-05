@@ -1,0 +1,29 @@
+#introCon {
+    display: block;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 9999;
+    height: 250px;
+    .transition(~"0.3s ease-in");
+    .transition-property(opacity, height);
+    
+    &.hide {
+      height: 0;
+      .transition(~"0.1s ease-in");
+    }
+    #intro {      
+      display: block;
+      margin: 0 auto;
+      border-radius: 150px 150px 0 0;
+      height: 250px;
+      width: 300px;
+      background-color: rgba(255,255,255,1);  
+      text-align: center;
+      .box-shadow(~"0 0 20px rgba(0,0,0,0.3)");
+    }
+}
+#intro-cat {
+    width: 130px;
+    text-align: center;
+    margin-top: 50px;
+}

@@ -46,12 +46,17 @@
   }
 }
 .messageCon{ 
-
 }
 .message {
   display: table;  
   margin-bottom: 4px;
   background-color: @messageColor;
+  
+  &.message-attach{
+    .content {
+      min-width: 520px;
+    }
+  }
 }
 .message-main {
   width: 100%;

@@ -7,7 +7,9 @@ $(document).ready( function(){
         console.log('img error');
     });
 })
-
+$(window).load( function(){ 
+    setTimeout( function(){$('#introCon').toggleClass('hide');}, 3000);
+});
 
 // Main
 jQuery( function ($) {
@@ -122,4 +124,5 @@ jQuery( function ($) {
 
     $(window).load( function(){ methods.init();});
     $(window).load( function() { $("div.introCon").fadeOut(2000);});
+    
 });
