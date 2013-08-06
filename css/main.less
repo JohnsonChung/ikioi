@@ -40,6 +40,9 @@
     position: absolute;
     left: 10px;
     margin: -5px 0 0 0;
+    .size(190px, 40px);
+    background-image: url(../img/komicalogo-white.png);
+    
   }
   #cup {
     float: left;
@@ -285,6 +288,7 @@
   }
 }
 
+
 // After jQuery Adjustment
 .postCon-noImage {
   
@@ -338,6 +342,7 @@
   text-shadow: 1px 1px 3px v;
 }
 
+
 // Swatches
 .swatches1 {
   background-color: @levelOne !important;
@@ -353,4 +358,37 @@
 }
 .swatches5 {
   background-color: @levelFive !important;
+}
+
+
+// Media 
+@media screen and (min-width: 0px) and (max-width: 765px) { 
+    
+  #navbar {  
+    .navbar-dynamic {
+      .search-form {
+      }
+      &.close {
+        margin-top: -80px;
+      }
+    }
+    .navbar-fixed {
+    }
+    #nav-brand {    
+      position: relative;
+      left: 0;
+      display: block;
+      margin: 0 auto; 
+      margin-top: -10px;   
+      .size(190px, 40px);
+    }
+    form.navbar-form {
+    }
+    ul.navbar-nav {    
+    }
+  }
+
+  #alertCon {
+    top: 80px;
+  }
 }
