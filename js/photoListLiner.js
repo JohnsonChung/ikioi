@@ -7,16 +7,19 @@ jQuery ( function ($) {
     // 動態瀏覽條
     var yR = 0;
     var yHide = false;
+
     $(window).bind('scroll', function(){
         var y = $(window).scrollTop(); 
 
         if ( yHide === false && y > yR ) {
             yR = y ;
-            $('.navbar-dynamic').slideToggle(100);
+            $('.navbar-dynamic').toggleClass('close');
+            $('#cup').toggleClass('open');
             yHide = true;
         } else if ( yHide === true && y <= yR ){        
             yR = y;
-            $('.navbar-dynamic').slideToggle(100);
+            $('.navbar-dynamic').toggleClass('close');
+            $('#cup').toggleClass('open');
             yHide = false;
         } else {
             yR = y;
@@ -25,9 +28,14 @@ jQuery ( function ($) {
 
     // 捲至頂端
     $(".navbar-fixed").bind( 'click' , function() {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $("html, body").animate({ scrollTop: 0 }, "fast");
       return false;
     });
+
+    // 點擊移除AlertCon
+    $('#alertCon').click( function(){
+        $(this).fadeOut();
+    })
 });
 
 
