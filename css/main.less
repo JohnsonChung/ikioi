@@ -1,17 +1,62 @@
 //
-// div.listCon>div.postCon*5>(div.infoCon)+(div.controlCon)+(div.imgCon)+(div.contentCon)
 @padding: 3px 5px;
 
-.navbar {
+#navbar {
+  @navAPadding: 10px 15px;
   position: fixed;
-  top: 0;
-  z-index: 10;
+  z-index: 3;
+  top: 0; left: 0; right: 0;
+  display: inline-block;
   width: 100%;
+  background-color: @gray;
+  .box-shadow(~"0 5px 5px rgba(0,0,0,0.1)");
   
-  .brand {
-    margin: -18px 0 -10px -10px;
+  .navbar-dynamic {
+    display: block;
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: @formColor;
+    text-align: center;
+
+    .search-form {
+      display: inline-block;
+      float: none !important;
+      margin: 0 auto;      
+    }
+  }
+  .navbar-fixed {
+    display: block;
+    width: 100%;
+  }
+  #nav-brand {    
+    float: left;
+  }
+  form.navbar-form {
+    line-height: 20px;
+  }
+  ul.navbar-nav {
+    line-height: 20px;
+
+    li {
+      float: left;
+      line-height: 20px;
+
+      &.active {
+
+      }
+      a {
+        display: block;
+        padding: @navAPadding;        
+        border: 1px solid @gray;
+        border-width: 0 1px 0 0;
+        text-decoration: none;
+        color: @white;
+      }
+    }
   }
 }
+
 .listCon {
   display: block;
   margin-top: 65px;
