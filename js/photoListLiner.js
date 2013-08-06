@@ -1,3 +1,36 @@
+// 其他動態效果
+jQuery ( function ($) {
+    // 讀取貓貓
+    $(window).load( function(){ 
+        setTimeout( function(){$('#introCon').toggleClass('hide');}, 3000);
+    });
+    // 動態瀏覽條
+    var yR = 0;
+    var yHide = false;
+    $(window).bind('scroll', function(){
+        var y = $(window).scrollTop(); 
+
+        if ( yHide === false && y > yR ) {
+            yR = y ;
+            $('.navbar-dynamic').slideToggle(100);
+            yHide = true;
+        } else if ( yHide === true && y <= yR ){        
+            yR = y;
+            $('.navbar-dynamic').slideToggle(100);
+            yHide = false;
+        } else {
+            yR = y;
+        }
+    });
+
+    // 捲至頂端
+    $(".navbar-fixed").bind( 'click' , function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+});
+
+
 // 取代錯誤圖片
 $(document).ready( function(){
     $('.postCon').css({"margin":"0 10px 45px 10px"});
@@ -7,10 +40,6 @@ $(document).ready( function(){
         console.log('img error');
     });
 })
-$(window).load( function(){ 
-    setTimeout( function(){$('#introCon').toggleClass('hide');}, 3000);
-});
-
 // Main
 jQuery( function ($) {
     
