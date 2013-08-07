@@ -1,0 +1,81 @@
+#navbar {
+  @navAPadding: 10px 15px;
+  position: fixed;
+  z-index: 3;
+  top: 0; left: 0; right: 0;
+  display: inline-block;
+  width: 100%;
+  background-color: @gray;
+  .box-shadow(~"0 5px 5px rgba(0,0,0,0.1)");
+  
+  .navbar-dynamic {
+    position: relative;
+    width: 100%;
+    background-color: @fontColor;
+    text-align: center;
+    .transition(~"margin 0.2s ease-in");
+
+    .search-form {
+      display: table;
+      float: none !important;
+      margin: 0 auto;
+    }
+    &.close {
+      margin-top: -40px;
+    }
+  }
+  .navbar-fixed {
+    position: relative;
+    left: 0;
+    display: table;
+    width: 100%;
+  }
+  #nav-brand {    
+    position: absolute;
+    left: 10px;
+    margin: -5px 0 0 0;
+    .size(190px, 40px);
+    background-image: url(../img/komicalogo-white.png);
+    
+  }
+  #cup {
+    float: left;
+    margin-left: -40px;
+    margin-right: 10px;
+    background-image: url('../img/cup.png');
+    .size(40px, 40px);
+    .transition(~"margin 0.1s linear");
+
+    &.open {      
+      margin-left: 10px;
+    }
+  }
+  form.navbar-form {
+    line-height: 20px;
+  }
+  ul.navbar-nav {    
+    position: relative;
+    left: 0;
+
+    li {
+      float: left;
+      line-height: 20px;
+
+      &.active {
+        background-color: rgba(0,0,0,0.3);
+      }
+      a {
+        display: block;
+        float: none;
+        padding: @navAPadding;        
+        text-decoration: none;
+        color: #ddd;
+
+        &:hover {
+          color: @white;
+          text-shadow: 0 0px 5px rgba(255,255,255,1);
+        }
+      }
+    }
+  }
+}

@@ -51,35 +51,9 @@
         </style>
     </head>
     <body>
-        <div class="navbar navbar-inverse">
-            <div class="navbar-inner">
-                <div class="container">
-
-                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->    
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
-                    <!-- Be sure to leave the brand out there if you want it shown -->    
-                    <a class="brand" href="#"><img src="img/komicalogo-white.png" alt="komica.cc"></a>
-
-                    <!-- Everything you want hidden at 940px or less, place within here -->    
-                    <div class="nav-collapse collapse">
-                        <!-- .nav, .navbar-search, .navbar-form, etc --> 
-                        <ul class="nav">
-                          <li class="active"><a href="#">Home</a></li>
-                          <li><a href="#">Link</a></li>
-                          <li><a href="#">Link</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
         <script id="entry-template" type="text/x-handlebars-template">
-            <div class="listCon">
+        <div class="listCon">
             {{#each comments}}
             <div class="postCon">
                 <div class="postPointCon">
@@ -106,6 +80,7 @@
                         {{/if}}
                     </div>
                     <div class="content">{{{CONTENT}}}</div>
+                    <div class="reply"></div>
                     <div class="footer">  
                         <div class="time">{{{TIME}}}</div>
                     </div>  
